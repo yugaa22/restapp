@@ -16,7 +16,7 @@ buildscript {
 }
 
 jar {
-    baseName = 'gs-rest-service'
+    baseName = 'restapp'
     version =  '0.1.0'
 }
 
@@ -40,7 +40,7 @@ task fatJar(type: Jar) {
       'Main-Class': 'hello.Application'
     )
   }
-  baseName = project.name + '-all'
+  baseName = 'restapp' + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
@@ -50,12 +50,12 @@ task wrapper(type: Wrapper) {
 }
 
 task packDeb(type: Deb, dependsOn: fatJar) {
-    packageName = project.name
+    packageName = 'restapp'
     version = 1.0
 
    requires('openjdk-7-jre-headless')
      from('build/libs/.') {
-     into "/opt/${project.name}"
+     into "/opt/restapp"
   }
 
   preInstall = file('pkg_scripts/preInstall.sh')
