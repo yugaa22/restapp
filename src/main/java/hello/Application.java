@@ -22,13 +22,5 @@ public class Application {
         for (String beanName : beanNames) {
             System.out.println(beanName);
         }
-	while(true){
-	try {
-            // Wait for 1 second.
-            Thread.sleep(30000);
-	    System.out.println("hello---------------");
-    	}
-    	catch (InterruptedException ex) {}
-	}
     }
 }
