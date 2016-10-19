@@ -30,7 +30,7 @@ springBoot {
     // Set values for variable placeholders
     // in the default launch script.
     embeddedLaunchScriptProperties =
-        [useStartStopDaemon: false]
+        [useStartStopDaemon: Boolean.valueOf(false)]
 }
 
 repositories {
