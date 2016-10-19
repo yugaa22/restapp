@@ -26,6 +26,11 @@ springBoot {
     executable = true
     // Excludes the devtools package from production builds
     excludeDevtools = true
+    
+    // Set values for variable placeholders
+    // in the default launch script.
+    embeddedLaunchScriptProperties =
+        [useStartStopDaemon: false]
 }
 
 repositories {
