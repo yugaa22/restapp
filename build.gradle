@@ -40,11 +40,11 @@ repositories {
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
-
+ext['tomcat.version'] = '7.0.59'
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile group:'org.apache.tomcat', name:'tomcat-juli', version:'7.0.59'
+    compile group:'org.apache.tomcat', name:'tomcat-juli', version:property('tomcat.version')
     compile("org.springframework.boot:spring-boot-starter-actuator")
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('com.jayway.jsonpath:json-path')
