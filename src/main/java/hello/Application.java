@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import org.springframework.jmx.support.ConnectorServerFactoryBean; 
 import org.springframework.remoting.rmi.RmiRegistryFactoryBean;
+import org.springframework.context.annotation.DependsOn;
 
 @SpringBootApplication
 public class Application {
