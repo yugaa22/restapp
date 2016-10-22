@@ -10,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.1.12.RELEASE"
         classpath 'com.netflix.nebula:gradle-ospackage-plugin:3.1.0'
     }
 }
@@ -43,10 +43,7 @@ targetCompatibility = 1.7
 
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE"){
-        exclude module: 'spring-boot-starter-tomcat'
-    }
-    compile 'org.springframework.boot:spring-boot-starter-tomcat:1.1.12.RELEASE'  
+    compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('com.jayway.jsonpath:json-path')
