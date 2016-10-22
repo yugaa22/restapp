@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.lang.management.*;
 import javax.management.*;
 import java.util.Set;
+import java.math.BigDecimal;
 
 @RestController
 public class GreetingController {
@@ -31,6 +32,30 @@ public class GreetingController {
         for (Object mbean : mbeans)
         {
             WriteAttributes(server, (ObjectName)mbean);
+        }
+        
+        //RequestProcessor
+        ObjectName requestObjName = new ObjectName("Tomcat:type=RequestProcessor,*");
+        Set<ObjectName> requestObjNameSet = server.queryNames(requestObjName, null);
+        Integer aliveSocketsCount = 0;
+        Long maxProcessingTime = 0L;
+        Long processingTime = 0L;
+        Long requstCount = 0L;
+        Long errorCount = 0L;
+        BigDecimal bytesReceived = BigDecimal.ZERO;
+        BigDecimal bytesSend = BigDecimal.ZERO;
+        for (ObjectName obj : requestObjNameSet) {
+            if (server.getAttribute(obj, "stage").toString().trim().equals("1"))
+                aliveSocketsCount++;
+            long nowMaxProcessingTime = Long.parseLong(server.getAttribute(obj, "maxTime").toString());
+            if (maxProcessingTime < nowMaxProcessingTime)
+                maxProcessingTime = nowMaxProcessingTime;
+            processingTime += Long.parseLong(server.getAttribute(obj, "processingTime").toString());
+            requstCount += Long.parseLong(server.getAttribute(obj, "requestCount").toString());
+            errorCount += Long.parseLong(serer.getAttribute(obj, "errorCount").toString());
+            bytesReceived = bytesReceived.add(new BigDecimal(mbsc.getAttribute(obj, "bytesReceived").toString()));
+            bytesSend = bytesSend.add(new BigDecimal(mbsc.getAttribute(obj, "bytesSent").toString()));
+            System.out.println(processingTime+" : "+requstCount+" : "+bytesReceived+" : "+bytesSend);
         }
     }
     
