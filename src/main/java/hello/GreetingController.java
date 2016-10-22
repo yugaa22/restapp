@@ -35,7 +35,7 @@ public class GreetingController {
         }
         
         //RequestProcessor
-        ObjectName requestObjName = new ObjectName("Tomcat:type=RequestProcessor,*");
+        ObjectName requestObjName = new ObjectName("Tomcat:type=GlobalRequestProcessor,name=*");
         Set<ObjectName> requestObjNameSet = server.queryNames(requestObjName, null);
         Integer aliveSocketsCount = 0;
         Long maxProcessingTime = 0L;
