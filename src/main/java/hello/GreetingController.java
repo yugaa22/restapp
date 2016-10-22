@@ -52,9 +52,9 @@ public class GreetingController {
                 maxProcessingTime = nowMaxProcessingTime;
             processingTime += Long.parseLong(server.getAttribute(obj, "processingTime").toString());
             requstCount += Long.parseLong(server.getAttribute(obj, "requestCount").toString());
-            errorCount += Long.parseLong(serer.getAttribute(obj, "errorCount").toString());
-            bytesReceived = bytesReceived.add(new BigDecimal(mbsc.getAttribute(obj, "bytesReceived").toString()));
-            bytesSend = bytesSend.add(new BigDecimal(mbsc.getAttribute(obj, "bytesSent").toString()));
+            errorCount += Long.parseLong(server.getAttribute(obj, "errorCount").toString());
+            bytesReceived = bytesReceived.add(new BigDecimal(server.getAttribute(obj, "bytesReceived").toString()));
+            bytesSend = bytesSend.add(new BigDecimal(server.getAttribute(obj, "bytesSent").toString()));
             System.out.println(processingTime+" : "+requstCount+" : "+bytesReceived+" : "+bytesSend);
         }
     }
