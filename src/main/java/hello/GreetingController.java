@@ -30,7 +30,7 @@ public class GreetingController {
         Set mbeans = server.queryNames(null, null);
         for (Object mbean : mbeans)
         {
-            WriteAttributes(mBeanServer, (ObjectName)mbean);
+            WriteAttributes(server, (ObjectName)mbean);
         }
     }
     
