@@ -46,10 +46,10 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web"){
         exclude module: 'spring-boot-starter-tomcat'
     }
-    providedRuntime('org.apache.tomcat.embed:tomcat-embed-core:7.0.52')
-    providedRuntime('org.apache.tomcat.embed:tomcat-embed-el:7.0.52')
-    providedRuntime('org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.52')
-    providedRuntime('org.apache.tomcat:tomcat7-websocket:7.0.52')    
+    compile('org.apache.tomcat.embed:tomcat-embed-core:7.0.52')
+    compile('org.apache.tomcat.embed:tomcat-embed-el:7.0.52')
+    compile('org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.52')
+    compile('org.apache.tomcat:tomcat7-websocket:7.0.52')    
     compile("org.springframework.boot:spring-boot-starter-actuator")
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('com.jayway.jsonpath:json-path')
