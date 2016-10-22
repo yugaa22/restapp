@@ -37,7 +37,6 @@ public class GreetingController {
         //RequestProcessor
         ObjectName requestObjName = new ObjectName("Tomcat:type=GlobalRequestProcessor,name=*");
         Set<ObjectName> requestObjNameSet = server.queryNames(requestObjName, null);
-        Integer aliveSocketsCount = 0;
         Long maxProcessingTime = 0L;
         Long processingTime = 0L;
         Long requstCount = 0L;
@@ -45,8 +44,6 @@ public class GreetingController {
         BigDecimal bytesReceived = BigDecimal.ZERO;
         BigDecimal bytesSend = BigDecimal.ZERO;
         for (ObjectName obj : requestObjNameSet) {
-            if (server.getAttribute(obj, "stage").toString().trim().equals("1"))
-                aliveSocketsCount++;
             long nowMaxProcessingTime = Long.parseLong(server.getAttribute(obj, "maxTime").toString());
             if (maxProcessingTime < nowMaxProcessingTime)
                 maxProcessingTime = nowMaxProcessingTime;
