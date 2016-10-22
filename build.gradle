@@ -44,7 +44,7 @@ targetCompatibility = 1.7
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web"){
-        exclude module: spring-boot-starter-tomcat
+        exclude module: 'spring-boot-starter-tomcat'
     }
     providedRuntime('org.apache.tomcat.embed:tomcat-embed-core:7.0.52')
     providedRuntime('org.apache.tomcat.embed:tomcat-embed-el:7.0.52')
