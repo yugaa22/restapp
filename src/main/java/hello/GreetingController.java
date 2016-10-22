@@ -4,6 +4,9 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import java.lang.management.*;
+import javax.management.*;
+import java.util.Set;
 
 @RestController
 public class GreetingController {
@@ -19,5 +22,30 @@ public class GreetingController {
 
     @RequestMapping(value = "/health")
     public void health() {
-    }	
+    }
+    
+    @RequestMapping(value = "/mbeans")
+    public void mbeans() {
+        MBeanServer server = ManagementFactory.getPlatformMBeanServer();
+        Set mbeans = server.queryNames(null, null);
+        for (Object mbean : mbeans)
+        {
+            WriteAttributes(mBeanServer, (ObjectName)mbean);
+        }
+    }
+    
+    private void WriteAttributes(final MBeanServer mBeanServer, final ObjectName http)
+        throws InstanceNotFoundException, IntrospectionException, ReflectionException
+    {
+        MBeanInfo info = mBeanServer.getMBeanInfo(http);
+        MBeanAttributeInfo[] attrInfo = info.getAttributes();
+
+        System.out.println("Attributes for object: " + http +":\n");
+        for (MBeanAttributeInfo attr : attrInfo)
+        {
+            System.out.println("  " + attr.getName() + "\n");
+        }
+    }
+    
+    
 }
