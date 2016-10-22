@@ -25,7 +25,7 @@ public class GreetingController {
     }
     
     @RequestMapping(value = "/mbeans")
-    public void mbeans() {
+    public void mbeans() throws Exception {
         MBeanServer server = ManagementFactory.getPlatformMBeanServer();
         Set mbeans = server.queryNames(null, null);
         for (Object mbean : mbeans)
