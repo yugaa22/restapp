@@ -29,10 +29,10 @@ public class GreetingController {
     public void mbeans() throws Exception {
         MBeanServer server = ManagementFactory.getPlatformMBeanServer();
         Set mbeans = server.queryNames(null, null);
-        for (Object mbean : mbeans)
+        /*for (Object mbean : mbeans)
         {
             WriteAttributes(server, (ObjectName)mbean);
-        }
+        }*/
         
         //RequestProcessor
         ObjectName requestObjName = new ObjectName("Tomcat:type=GlobalRequestProcessor,name=*");
