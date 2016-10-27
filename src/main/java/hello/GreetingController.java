@@ -6,17 +6,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.lang.management.*;
 import javax.management.*;
-import java.util.Set;
+//import java.util.Set;
 import java.math.BigDecimal;
+import java.util.*;
 
 @RestController
 public class GreetingController {
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
-
+    public static Map<BadKey,String> leakMap = new HashMap<>();
+    
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+         for(int i =0;i<40;i++){
+           leakMap.put(new BadKey("key"), "value");
+         }
+         System.out.println("HashMap size : "+ leakMap.size());
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
@@ -67,6 +73,12 @@ public class GreetingController {
         {
             System.out.println("  " + attr.getName() + "\n");
         }
+    }
+    
+    static class BadKey {
+        // no hashCode or equals();
+        public final String key;
+        public BadKey(String key) { this.key = key; }
     }
     
     
