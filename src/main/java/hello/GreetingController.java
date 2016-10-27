@@ -20,10 +20,10 @@ public class GreetingController {
     
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-         for(int i =0;i<40;i++){
+         /*for(int i =0;i<40;i++){
            leakMap.put(new BadKey("key"), "value");
          }
-         System.out.println("HashMap size : "+ leakMap.size());
+         System.out.println("HashMap size : "+ leakMap.size());*/
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
