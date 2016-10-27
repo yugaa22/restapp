@@ -17,6 +17,7 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
     public static Map<BadKey,String> leakMap = new HashMap<>();
     
+    
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
          for(int i =0;i<40;i++){
@@ -33,6 +34,7 @@ public class GreetingController {
     
     @RequestMapping(value = "/mbeans")
     public void mbeans() throws Exception {
+        System.out.println("New changes in mbeans");
         MBeanServer server = ManagementFactory.getPlatformMBeanServer();
         Set mbeans = server.queryNames(null, null);
         /*for (Object mbean : mbeans)
