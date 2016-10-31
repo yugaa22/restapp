@@ -77,7 +77,7 @@ public class StackDriverWriter {
 
 		GoogleCredential credential = GoogleCredential
 				.fromStream(
-						new FileInputStream(file));
+						new FileInputStream(file))
 				.createScoped(MonitoringScopes.all());
 		return credential;
 	}
