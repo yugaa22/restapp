@@ -105,7 +105,12 @@ public class StackDriverWriter {
 	}
 
 	public void send(MetricDescriptor metricDescriptor, long value) {
-		createTimeSeries(metricDescriptor, value);
+		try {
+			createTimeSeries(metricDescriptor, value);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private void createTimeSeries(MetricDescriptor descriptor, long value)
