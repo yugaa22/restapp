@@ -108,7 +108,7 @@ public class StackDriverWriter {
 		try {
 			createTimeSeries(metricDescriptor, value);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println("In StackDriverWriter Exception");
 			e.printStackTrace();
 		}
 	}

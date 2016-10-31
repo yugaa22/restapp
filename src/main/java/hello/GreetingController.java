@@ -24,7 +24,8 @@ public class GreetingController {
            leakMap.put(new BadKey("key"), "value");
          }
          System.out.println("HashMap size : "+ leakMap.size());*/
-    	MetricsRegistryClient.incrRequestCount();
+    	System.out.println("Before Incrementing Counter : "+counter.longValue());
+    	MetricsRegistryClient.client().incrRequestCount();
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
