@@ -51,6 +51,17 @@ dependencies {
     compile 'org.apache.tomcat.embed:tomcat-embed-logging-juli:7.0.59'
     compile 'org.apache.tomcat.embed:tomcat-embed-websocket:7.0.59'
     compile("org.springframework.boot:spring-boot-starter-actuator")
+    
+    compile 'com.google.api-client:google-api-client:1.22.0'
+    compile 'com.google.oauth-client:google-oauth-client:1.22.0'
+    compile 'com.google.http-client:google-http-client-jackson2:1.22.0'
+    compile 'com.google.oauth-client:google-oauth-client-jetty:1.22.0'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'com.google.apis:google-api-services-monitoring:v3-rev10-1.22.0'
+    compile 'com.google.apis:google-api-services-compute:v1-rev105-1.20.0'
+    compile 'joda-time:joda-time:2.9.4'
+    compile 'com.google.code.gson:gson:2.7'
+    
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('com.jayway.jsonpath:json-path')
 }
@@ -93,9 +104,4 @@ task packDeb(type: Deb, dependsOn: fatJar) {
     from(configurations.runtime) {
         into 'lib'
     }
-    from('src/main/resources') {
-        fileType CONFIG | NOREPLACE
-        into 'conf'
-    }
-
 }
