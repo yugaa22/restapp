@@ -169,7 +169,7 @@ public class StackDriverWriter {
 		String currentTime = sdf.format(new Date());
 		String startTime = sdf.format(new Date(
 				new Date().getTime() - 1000 * 60 * 5));
-		System.out.println("current time : " + currentTime); // -prints->
+		//System.out.println("current time : " + currentTime); // -prints->
 																// 2015-01-22T03:23:26Z
 																// (https://cloud.google.com/monitoring/api/troubleshooting)
 		TimeInterval timeInterval = new TimeInterval();

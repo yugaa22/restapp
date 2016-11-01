@@ -24,13 +24,12 @@ public class MetricsRegistryClient {
 		return SingletonHelper.INSTANCE;
 	}
 
-	public void incrRequestCount() {
-		requestCounter.incrementAndGet();
+	public long incrRequestCount() {
+		return requestCounter.incrementAndGet();
 	}
 
 	class FlushTask extends TimerTask {
 		public void run() {
-			System.out.println("In MetricRegistryCLient : FlushTask Begin "+requestCounter.get());
 			long requests = requestCounter.getAndSet(0);
 			System.out
 					.println("Time's up! Number of requests in this minute : "
