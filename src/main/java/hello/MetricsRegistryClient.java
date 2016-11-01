@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class MetricsRegistryClient {
 
 	private StackDriverWriter sdWriter = new StackDriverWriter();
-	private static final AtomicLong requestCounter = new AtomicLong();
+	private static final AtomicLong requestCounter = new AtomicLong(0);
 	private Timer timer;
 
 	public MetricsRegistryClient() {
