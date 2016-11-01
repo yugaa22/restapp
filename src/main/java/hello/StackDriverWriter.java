@@ -18,9 +18,31 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
-import org.springframework.expression.TypedValue;
 
-import com.fasterxml.jackson.core.JsonFactory;
+import org.joda.time.DateTime;
+
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.compute.Compute;
+import com.google.api.services.compute.model.InstanceGroupsListInstances;
+import com.google.api.services.compute.model.InstanceGroupsListInstancesRequest;
+import com.google.api.services.compute.model.InstanceWithNamedPorts;
+import com.google.api.services.monitoring.v3.Monitoring;
+import com.google.api.services.monitoring.v3.MonitoringScopes;
+import com.google.api.services.monitoring.v3.model.CreateTimeSeriesRequest;
+import com.google.api.services.monitoring.v3.model.ListMetricDescriptorsResponse;
+import com.google.api.services.monitoring.v3.model.ListMonitoredResourceDescriptorsResponse;
+import com.google.api.services.monitoring.v3.model.ListTimeSeriesResponse;
+import com.google.api.services.monitoring.v3.model.Metric;
+import com.google.api.services.monitoring.v3.model.MonitoredResource;
+import com.google.api.services.monitoring.v3.model.Point;
+import com.google.api.services.monitoring.v3.model.TimeInterval;
+import com.google.api.services.monitoring.v3.model.TimeSeries;
+import com.google.api.services.monitoring.v3.model.TypedValue;
 
 public class StackDriverWriter {
 	/**
@@ -60,7 +82,7 @@ public class StackDriverWriter {
 	    ClassLoader classLoader = StackDriverWriter.class.getClassLoader();  
 	    // Getting resource(File) from class loader  
 	    //File file=new File(classLoader.getResource("classpath:stackdrivercreateaccess.json").getFile());  
-	    InputStream inputstream=classLoader.getResource("classpath:stackdrivercreateaccess.json").openStream();
+	    InputStream inputstream=classLoader.getResource("stackdrivercreateaccess.json").openStream();
 		GoogleCredential credential = GoogleCredential
 				.fromStream(
 						inputstream)
