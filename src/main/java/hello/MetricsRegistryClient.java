@@ -30,12 +30,12 @@ public class MetricsRegistryClient {
 
 	class FlushTask extends TimerTask {
 		public void run() {
-			System.out.println("In MetricRegistryCLient : FlushTask Begin ");
+			System.out.println("In MetricRegistryCLient : FlushTask Begin "+requestCounter.get());
 			long requests = requestCounter.getAndSet(0);
-			if(requests < 0) requests = 0;
 			System.out
 					.println("Time's up! Number of requests in this minute : "
 							+ requests);
+			if(requests < 0) return;
 			MetricDescriptor metricDescriptor = new MetricDescriptor.MetricDescriptorBuilder()
 					.fromType(
 							"custom.googleapis.com/service/tomcat/requests_count")
