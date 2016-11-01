@@ -38,7 +38,7 @@ public class MetricsRegistryClient {
 			MetricDescriptor metricDescriptor = new MetricDescriptor.MetricDescriptorBuilder()
 					.fromType(
 							"custom.googleapis.com/service/tomcat/request_count")
-					.fromKind("GUAGE").fromResourceType("gce_instance")
+					.fromKind("GAUGE").fromResourceType("gce_instance")
 					.fromValueType("INT64").createDescriptor();
 			sdWriter.send(metricDescriptor, requests);
 		}
