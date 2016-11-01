@@ -32,12 +32,13 @@ public class MetricsRegistryClient {
 		public void run() {
 			System.out.println("In MetricRegistryCLient : FlushTask Begin ");
 			long requests = requestCounter.getAndSet(0);
+			if(requests < 0) requests = 0;
 			System.out
 					.println("Time's up! Number of requests in this minute : "
 							+ requests);
 			MetricDescriptor metricDescriptor = new MetricDescriptor.MetricDescriptorBuilder()
 					.fromType(
-							"custom.googleapis.com/service/tomcat/request_count")
+							"custom.googleapis.com/service/tomcat/requests_count")
 					.fromKind("GAUGE").fromResourceType("gce_instance")
 					.fromValueType("INT64").createDescriptor();
 			sdWriter.send(metricDescriptor, requests);
