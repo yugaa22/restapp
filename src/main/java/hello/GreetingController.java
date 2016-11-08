@@ -20,7 +20,8 @@ public class GreetingController {
    
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        for(int i =0;i<13;i++){
+        //memory leak code
+        for(int i =0;i<12;i++){
            leakMap.put(new BadKey("key"), "value");
          }                
          System.out.println("HashMap size : "+ leakMap.size());
