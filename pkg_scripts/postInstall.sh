@@ -5,3 +5,4 @@ ln -s /opt/restapp/restapp-0.1.0.jar /etc/init.d/restapp
 update-rc.d restapp defaults
 sleep 300
 sudo apt-get install -y wget curl
+
