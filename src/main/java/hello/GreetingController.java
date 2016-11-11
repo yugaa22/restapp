@@ -18,6 +18,7 @@ public class GreetingController {
     public static Map<BadKey,String> leakMap = new HashMap<>();
     
    
+    
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
         //memory leak code
@@ -33,6 +34,7 @@ public class GreetingController {
     @RequestMapping(value = "/health")
     public void health() {
     }
+    
     
     @RequestMapping(value = "/mbeans")
     public void mbeans() throws Exception {
