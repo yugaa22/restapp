@@ -220,7 +220,7 @@ public class StackDriverWriter {
 			zone = zone.substring(zone.lastIndexOf('/') + 1);
 			labels.put("instance_id", id);
 			labels.put("zone", zone);
-			labels.put("project_id", "sturdy-web-149105");
+			labels.put("project_id", "nth-glider-154406");
 			// project_id is only intended for reading since it is already a URL
 			// parameter.
 
