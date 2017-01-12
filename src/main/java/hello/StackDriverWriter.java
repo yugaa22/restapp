@@ -179,7 +179,7 @@ public class StackDriverWriter {
 		ts.setPoints(Arrays.asList(point));
 
 		content.setTimeSeries(Arrays.asList(ts));
-		String project = "sturdy-web-149105";
+		String project = "nth-glider-154406";
 	    String projectResource = "projects/" + project;
 		Monitoring.Projects.TimeSeries.Create request = monitoringService
 				.projects().timeSeries().create(projectResource, content);
