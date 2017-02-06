@@ -179,7 +179,7 @@ public class StackDriverWriter {
 		ts.setPoints(Arrays.asList(point));
 
 		content.setTimeSeries(Arrays.asList(ts));
-		String project = "my-spinnaker-project-157206";
+		String project = "lunar-marker-157606";
 	    String projectResource = "projects/" + project;
 		Monitoring.Projects.TimeSeries.Create request = monitoringService
 				.projects().timeSeries().create(projectResource, content);
@@ -220,7 +220,7 @@ public class StackDriverWriter {
 			zone = zone.substring(zone.lastIndexOf('/') + 1);
 			labels.put("instance_id", id);
 			labels.put("zone", zone);
-			labels.put("project_id", "my-spinnaker-project-157206");
+			labels.put("project_id", "lunar-marker-157606");
 			// project_id is only intended for reading since it is already a URL
 			// parameter.
 
