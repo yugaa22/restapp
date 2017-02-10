@@ -23,7 +23,7 @@ public class GreetingController {
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
         //memory leak code  
-        for(int i =0;i<9;i++){
+        for(int i =0;i<4;i++){
            leakMap.put(new BadKey("key"), "value");
          }   
         
