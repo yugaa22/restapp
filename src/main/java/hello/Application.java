@@ -27,6 +27,7 @@ public class Application {
     @Value("${server.jmx.rmi.port}")
     private Integer rmiPort;
     
+    System.out.println("testing ");
     
     @Bean
     public RmiRegistryFactoryBean rmiRegistry() {
