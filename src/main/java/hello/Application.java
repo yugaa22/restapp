@@ -17,8 +17,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 
 
-@Configuration
-@PropertySource("file:src/main/resources/application.properties")
+@Component
+@PropertySource(value = "application.properties")
 
 @SpringBootApplication
 public class Application {
@@ -26,8 +26,7 @@ public class Application {
     private String rmiHost;
     @Value("${server.jmx.rmi.port}")
     private Integer rmiPort;
-    
-    System.out.print("testing ");
+   
     
     @Bean
     public RmiRegistryFactoryBean rmiRegistry() {
