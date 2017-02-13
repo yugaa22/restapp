@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@PropertySource(value = "application.properties")
+@PropertySource(value = "/application.properties")
 
 @SpringBootApplication
 public class Application {
