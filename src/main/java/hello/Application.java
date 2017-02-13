@@ -12,6 +12,10 @@ import org.springframework.remoting.rmi.RmiRegistryFactoryBean;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+
+@Configuration
+@PropertySource("file:application.properties")
+
 @SpringBootApplication
 public class Application {
     @Value("${jmx.rmi.host:localhost}")
