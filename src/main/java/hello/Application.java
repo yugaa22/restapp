@@ -11,21 +11,17 @@ import org.springframework.jmx.support.ConnectorServerFactoryBean;
 import org.springframework.remoting.rmi.RmiRegistryFactoryBean;
 import org.springframework.context.annotation.DependsOn;
 
-import org.springframework.context.annotation.*;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 
 
-@Component
-@PropertySource(value = "/application.properties")
+@ConfigurationProperties(prefix = "server", ignoreUnknownFields = true)
 
 @SpringBootApplication
 public class Application {
     @Value("${jmx.rmi.host:localhost}")
     private String rmiHost;
-    @Value("${server_jmx_rmi_port}")
+    @Value("${server.jmx_rmi_port}")
     private Integer rmiPort;
    
     
@@ -46,11 +42,6 @@ public class Application {
         return connectorServerFactoryBean;
     }
     
-    @Bean
-	public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
-		return new PropertySourcesPlaceholderConfigurer();
-	}
-
     public static void main(String[] args) {
     	ApplicationContext ctx = SpringApplication.run(Application.class, args);
         System.out.println("Let's inspect the beans provided by Spring Boot:");
