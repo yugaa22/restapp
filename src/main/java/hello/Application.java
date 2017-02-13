@@ -45,6 +45,11 @@ public class Application {
         connectorServerFactoryBean.setServiceUrl(String.format("service:jmx:rmi://%s:%s/jndi/rmi://%s:%s/jmxrmi", rmiHost, rmiPort, rmiHost, rmiPort));
         return connectorServerFactoryBean;
     }
+    
+    @Bean
+	public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
 
     public static void main(String[] args) {
     	ApplicationContext ctx = SpringApplication.run(Application.class, args);
