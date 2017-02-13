@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jmx.support.ConnectorServerFactoryBean; 
 import org.springframework.remoting.rmi.RmiRegistryFactoryBean;
 import org.springframework.context.annotation.DependsOn;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 
 
 @Configuration
@@ -19,7 +18,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @SpringBootApplication
 public class Application {
     @Value("${jmx.rmi.host:localhost}")
-    private String rmiHost
+    private String rmiHost;
     @Value("${server.jmx.rmi.port}")
     private Integer rmiPort;
  
