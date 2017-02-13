@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 public class Application {
     @Value("${jmx.rmi.host:localhost}")
     private String rmiHost;
-    @Value("${server.jmx.rmi.port}")
+    @Value("${server_jmx_rmi_port}")
     private Integer rmiPort;
    
     
