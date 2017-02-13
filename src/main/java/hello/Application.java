@@ -29,7 +29,6 @@ public class Application {
     @Bean
     public RmiRegistryFactoryBean rmiRegistry()  throws Exception {
         final RmiRegistryFactoryBean rmiRegistryFactoryBean = new RmiRegistryFactoryBean();
-        System.out.println("pk test ...."+rmiPort);
         rmiRegistryFactoryBean.setPort(rmiPort);
         rmiRegistryFactoryBean.setAlwaysCreate(true);
         return rmiRegistryFactoryBean;
