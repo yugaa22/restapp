@@ -14,8 +14,8 @@ import org.springframework.context.annotation.DependsOn;
 @SpringBootApplication
 public class Application {
     @Value("${jmx.rmi.host:localhost}")
-    private String rmiHost;
-    @Value("${jmx.rmi.port:9012}")
+    private String rmiHost
+    @Value("${server.jmx.rmi.port}")
     private Integer rmiPort;
  
     @Bean
