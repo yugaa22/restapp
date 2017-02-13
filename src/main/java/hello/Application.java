@@ -21,13 +21,15 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class Application {
     @Value("${jmx.rmi.host:localhost}")
     private String rmiHost;
-    @Value("${server.jmx_rmi_port}")
+    @Value("${jmx.rmi.port:9012}")
     private Integer rmiPort;
+   
    
     
     @Bean
-    public RmiRegistryFactoryBean rmiRegistry() {
+    public RmiRegistryFactoryBean rmiRegistry()  throws Exception {
         final RmiRegistryFactoryBean rmiRegistryFactoryBean = new RmiRegistryFactoryBean();
+        System.out.println("pk test ...."+rmiPort);
         rmiRegistryFactoryBean.setPort(rmiPort);
         rmiRegistryFactoryBean.setAlwaysCreate(true);
         return rmiRegistryFactoryBean;
