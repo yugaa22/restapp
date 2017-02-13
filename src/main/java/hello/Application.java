@@ -27,7 +27,7 @@ public class Application {
     @Value("${server.jmx.rmi.port}")
     private Integer rmiPort;
     
-    System.out.println("pk test "+rmiPort);
+    
     @Bean
     public RmiRegistryFactoryBean rmiRegistry() {
         final RmiRegistryFactoryBean rmiRegistryFactoryBean = new RmiRegistryFactoryBean();
@@ -47,7 +47,7 @@ public class Application {
 
     public static void main(String[] args) {
     	ApplicationContext ctx = SpringApplication.run(Application.class, args);
-        
+        System.out.println("pk test "+rmiPort);
         System.out.println("Let's inspect the beans provided by Spring Boot:");
       
   
