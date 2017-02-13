@@ -40,9 +40,6 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  * @author Greg Turnquist
  */
 
-@Configuration
-@PropertySource("file:src/main/resources/application.properties")
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
