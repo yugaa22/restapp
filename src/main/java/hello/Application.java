@@ -18,7 +18,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 
 @Configuration
-@PropertySource("file:application.properties")
+@PropertySource("file:resources/application.properties")
 
 @SpringBootApplication
 public class Application {
