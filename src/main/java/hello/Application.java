@@ -11,6 +11,11 @@ import org.springframework.jmx.support.ConnectorServerFactoryBean;
 import org.springframework.remoting.rmi.RmiRegistryFactoryBean;
 import org.springframework.context.annotation.DependsOn;
 
+import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+
+
 
 @Configuration
 @PropertySource("file:application.properties")
