@@ -17,12 +17,12 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
     public static Map<BadKey,String> leakMap = new HashMap<>();
     
-   ///////@system.out.println("GCE")
+    system.out.println("GCE")
     
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
         //memory leak code  
-        for(int i =0;i<7;i++){
+        for(int i =0;i<6;i++){
           leakMap.put(new BadKey("key"), "value");
          }          
         // System.out.println("HashMap size : "+ leakMap.size());
