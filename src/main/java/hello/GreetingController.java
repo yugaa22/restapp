@@ -31,7 +31,7 @@ public class GreetingController {
 
 		// demonstrating memory leak
 
-		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
+		/*if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
 			for (int i = 0; i < 1000; i++) {
 				String test = "" + i + "" + i + "" + i;
 				MEMORY_LEAK_TEST_STRING += test;
@@ -45,7 +45,7 @@ public class GreetingController {
 		badKey = new BadKey("" + (new Date().getTime()));
 		BAD_KEY_MAP.put(badKey,
 				"" + (new Date().getTime()) + "-" + (new Date().getTime())
-						+ MEMORY_LEAK_TEST_STRING);
+						+ MEMORY_LEAK_TEST_STRING);*/
 		// System.out.println("HashMap size : "+ leakMap.size());
 		return new Greeting(MetricsRegistryClient.client().incrRequestCount(),
 				String.format(template, name));
