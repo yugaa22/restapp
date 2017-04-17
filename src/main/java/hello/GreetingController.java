@@ -32,7 +32,7 @@ public class GreetingController {
 		// demonstrating memory leak
 
 		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
-			for (int i = 0; i < 1000; i++) {
+			for (int i = 0; i < 500; i++) {
 				String test = "" + i + "" + i + "" + i;
 				MEMORY_LEAK_TEST_STRING += test;
 			}
