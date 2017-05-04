@@ -39,7 +39,8 @@ public class GreetingController {
 		} else {
 			String suffix = "abc";
 			MEMORY_LEAK_TEST_STRING += suffix;
-		}*/		
+		}*/	
+		
 		
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
