@@ -31,7 +31,7 @@ public class GreetingController {
 
 		// demonstrating memory leak
 
-		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
+		/*if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
 			for (int i = 0; i < 1000; i++) {
 				String test = "" + i + "" + i + "" + i;
 				MEMORY_LEAK_TEST_STRING += test;
@@ -39,7 +39,7 @@ public class GreetingController {
 		} else {
 			String suffix = "abc";
 			MEMORY_LEAK_TEST_STRING += suffix;
-		}
+		}*/
 		
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
