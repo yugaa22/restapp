@@ -23,7 +23,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -31,10 +30,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
-import org.springframework.context.annotation.*;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 /**
  * @author Greg Turnquist
@@ -58,10 +53,9 @@ public class GreetingControllerTests {
 	@Test
 	public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
-		this.mockMvc.perform(get("/greeting"))
-				.andDo(print())
-				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.content").value("Hello, World!"));
+			GreetingController controller = new GreetingController();
+			controller.greeting("Hello");
+			
 	}
 
 	@Test
