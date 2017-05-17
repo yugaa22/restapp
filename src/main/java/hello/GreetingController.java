@@ -75,8 +75,8 @@ public class GreetingController {
 //						+ MEMORY_LEAK_TEST_STRING);		
 		
 		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-//		for (int i = 0; i < 6; i++) {
-//			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
+		for (int i = 0; i < 6; i++) {
+			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
 			getAllUsersFromDB();
 //			List<SVCVersion> svcVersions = svcVersionDao.getAllSVCVersion();
 //			if (CollectionUtils.isNotEmpty(svcVersions)) {
@@ -84,7 +84,7 @@ public class GreetingController {
 //				// SVCAnalysis svcAnalysis = new SVCAnalysis();
 //				// svcVersion = svcAnalysis.saveSVCVersion(svcVersion);
 //			}
-//		}
+		}
 
 		if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
