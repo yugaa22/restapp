@@ -71,8 +71,7 @@ public class GreetingController {
 //		badKey = new BadKey("" + (new Date().getTime()));
 //		BAD_KEY_MAP.put(badKey,
 //				"" + (new Date().getTime()) + "-" + (new Date().getTime())
-//						+ MEMORY_LEAK_TEST_STRING);
-		
+//						+ MEMORY_LEAK_TEST_STRING);		
 		
 		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
 //		for (int i = 0; i < 6; i++) {
