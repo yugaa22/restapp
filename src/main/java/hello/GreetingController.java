@@ -53,8 +53,7 @@ public class GreetingController {
 	// System.out.println("GCE");
 
 	@RequestMapping("/greeting")
-	public String greeting(
-			@RequestParam(value = "name", defaultValue = "World") String name) {
+	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 
 		// demonstrating memory leak
 
@@ -67,24 +66,16 @@ public class GreetingController {
 //			String suffix = "0a1b2c3d4e";
 //			MEMORY_LEAK_TEST_STRING += suffix;
 //		}
-//
-//		BadKey badKey = new BadKey("");
-//		badKey = new BadKey("" + (new Date().getTime()));
-//		BAD_KEY_MAP.put(badKey,
-//				"" + (new Date().getTime()) + "-" + (new Date().getTime())
-//						+ MEMORY_LEAK_TEST_STRING);		
+
+		BadKey badKey = new BadKey("");
+		badKey = new BadKey("" + (new Date().getTime()));
+		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
 		
-		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-		for (int i = 0; i < 6; i++) {
-			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
-			getAllUsersFromDB();
-//			List<SVCVersion> svcVersions = svcVersionDao.getAllSVCVersion();
-//			if (CollectionUtils.isNotEmpty(svcVersions)) {
-//				svcVersion = svcVersions.get(0);
-//				// SVCAnalysis svcAnalysis = new SVCAnalysis();
-//				// svcVersion = svcAnalysis.saveSVCVersion(svcVersion);
-//			}
-		}
+//		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
+//		for (int i = 0; i < 6; i++) {
+//			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
+//			getAllUsersFromDB();
+//		}
 
 		if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
