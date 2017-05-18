@@ -56,52 +56,52 @@ public class GreetingController {
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 
 		// demonstrating memory leak
+		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
+			for (int i = 0; i < 1000; i++) {
+				String test = "" + i + "" + i + "" + i;
+				MEMORY_LEAK_TEST_STRING += test;
+			}
+		} else {
+			String suffix = "0a1b2c3d4e";
+			MEMORY_LEAK_TEST_STRING += suffix;
+		}
 
-//		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
-//			for (int i = 0; i < 1000; i++) {
-//				String test = "" + i + "" + i + "" + i;
-//				MEMORY_LEAK_TEST_STRING += test;
-//			}
-//		} else {
-//			String suffix = "0a1b2c3d4e";
-//			MEMORY_LEAK_TEST_STRING += suffix;
-//		}
-
-//		BadKey badKey = new BadKey("");
-//		badKey = new BadKey("" + (new Date().getTime()));
-//		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
+		BadKey badKey = new BadKey("");
+		badKey = new BadKey("" + (new Date().getTime()));
+		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
 		
-		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
+		// demonstrating architectural regression
+//		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
 //		for (int i = 0; i < 6; i++) {
 //			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
-			getAllUsersFromDB();
+//			getAllUsersFromDB();
 //		}
 
-		if (Long.compare(TIMESTAMP, 0l) == 0
-				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
-			TIMESTAMP = (new Date()).getTime();
-
-			try (Socket clientSocket = new Socket(KAIROSDB_IP_ADDRESS, PORT);
-					PrintWriter out = (clientSocket.isConnected()) ? new PrintWriter(
-							clientSocket.getOutputStream(), true) : null;) {
-				if (out != null) {
-					LOG.info("Connected with the server : {} with port : {}",
-							clientSocket.getInetAddress().getHostName(),
-							clientSocket.getPort());
-					writeIntoKairosDB(out, "apache.dbOperations", ""+ POSTGRES_NUM_OPS_METRIC_COUNT);
-					// writeIntoKairosDB(out, "elasticsearch.num_of_calls",
-					// "1");
-				}
-			} catch (IOException ex) {
-				LOG.error("Error: ", ex);
-			}
-		}
+//		if (Long.compare(TIMESTAMP, 0l) == 0
+//				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
+//			TIMESTAMP = (new Date()).getTime();
+//
+//			try (Socket clientSocket = new Socket(KAIROSDB_IP_ADDRESS, PORT);
+//					PrintWriter out = (clientSocket.isConnected()) ? new PrintWriter(
+//							clientSocket.getOutputStream(), true) : null;) {
+//				if (out != null) {
+//					LOG.info("Connected with the server : {} with port : {}",
+//							clientSocket.getInetAddress().getHostName(),
+//							clientSocket.getPort());
+//					writeIntoKairosDB(out, "apache.dbOperations", ""+ POSTGRES_NUM_OPS_METRIC_COUNT);
+//					// writeIntoKairosDB(out, "elasticsearch.num_of_calls",
+//					// "1");
+//				}
+//			} catch (IOException ex) {
+//				LOG.error("Error: ", ex);
+//			}
+//		}
 		
 		// System.out.println("HashMap size : "+ leakMap.size());
 //		new Greeting(MetricsRegistryClient.client().incrRequestCount(),
 //				String.format(template, name))
-//		return "HashMap size : "+ BAD_KEY_MAP.size() + "\n String length : " + MEMORY_LEAK_TEST_STRING.length();
-		return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
+		return "HashMap size : "+ BAD_KEY_MAP.size() + "\n String length : " + MEMORY_LEAK_TEST_STRING.length();
+//		return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
 
 	
