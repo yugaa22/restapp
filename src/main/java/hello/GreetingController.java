@@ -106,25 +106,25 @@ public class GreetingController {
 
 	
 
-	public void getAllUsersFromDB(){
-		       Connection c = null;
-		       Statement stmt = null;
-		       try {
-		       Class.forName(JDBC_DRIVER);
-		         c = DriverManager.getConnection(DB_URL,USER, PASS);
-		         c.setAutoCommit(false);
-		         stmt = c.createStatement();
-		         ResultSet rs = stmt.executeQuery( "select * from UserLoginDetails" );
-		         rs.close();
-		         stmt.close();
-		         c.close();
-		       } catch ( Exception e ) {
-		         System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-		         System.exit(0);
-		       }
-		       System.out.println("Operation done successfully");
-		  
-	  }
+//	public void getAllUsersFromDB(){
+//		       Connection c = null;
+//		       Statement stmt = null;
+//		       try {
+//		       Class.forName(JDBC_DRIVER);
+//		         c = DriverManager.getConnection(DB_URL,USER, PASS);
+//		         c.setAutoCommit(false);
+//		         stmt = c.createStatement();
+//		         ResultSet rs = stmt.executeQuery( "select * from UserLoginDetails" );
+//		         rs.close();
+//		         stmt.close();
+//		         c.close();
+//		       } catch ( Exception e ) {
+//		         System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+//		         System.exit(0);
+//		       }
+//		       System.out.println("Operation done successfully");
+//		  
+//	  }
 	
 	@RequestMapping(value = "/health")
 	public void health() {
