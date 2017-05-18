@@ -67,15 +67,15 @@ public class GreetingController {
 //			MEMORY_LEAK_TEST_STRING += suffix;
 //		}
 
-		BadKey badKey = new BadKey("");
-		badKey = new BadKey("" + (new Date().getTime()));
-		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
+//		BadKey badKey = new BadKey("");
+//		badKey = new BadKey("" + (new Date().getTime()));
+//		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
 		
-//		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-//		for (int i = 0; i < 6; i++) {
-//			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
-//			getAllUsersFromDB();
-//		}
+		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
+		for (int i = 0; i < 6; i++) {
+			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
+			getAllUsersFromDB();
+		}
 
 		if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
@@ -88,8 +88,7 @@ public class GreetingController {
 					LOG.info("Connected with the server : {} with port : {}",
 							clientSocket.getInetAddress().getHostName(),
 							clientSocket.getPort());
-					writeIntoKairosDB(out, "apache.dbOperations", ""
-							+ POSTGRES_NUM_OPS_METRIC_COUNT);
+					writeIntoKairosDB(out, "apache.dbOperations", ""+ POSTGRES_NUM_OPS_METRIC_COUNT);
 					// writeIntoKairosDB(out, "elasticsearch.num_of_calls",
 					// "1");
 				}
@@ -101,30 +100,31 @@ public class GreetingController {
 		// System.out.println("HashMap size : "+ leakMap.size());
 //		new Greeting(MetricsRegistryClient.client().incrRequestCount(),
 //				String.format(template, name))
-		return "HashMap size : "+ BAD_KEY_MAP.size() + "\n String length : " + MEMORY_LEAK_TEST_STRING.length();
+//		return "HashMap size : "+ BAD_KEY_MAP.size() + "\n String length : " + MEMORY_LEAK_TEST_STRING.length();
+		return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
 
 	
 
-//	public void getAllUsersFromDB(){
-//		       Connection c = null;
-//		       Statement stmt = null;
-//		       try {
-//		       Class.forName(JDBC_DRIVER);
-//		         c = DriverManager.getConnection(DB_URL,USER, PASS);
-//		         c.setAutoCommit(false);
-//		         stmt = c.createStatement();
-//		         ResultSet rs = stmt.executeQuery( "select * from UserLoginDetails" );
-//		         rs.close();
-//		         stmt.close();
-//		         c.close();
-//		       } catch ( Exception e ) {
-//		         System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-//		         System.exit(0);
-//		       }
-//		       System.out.println("Operation done successfully");
-//		  
-//	  }
+	public void getAllUsersFromDB(){
+		       Connection c = null;
+		       Statement stmt = null;
+		       try {
+		       Class.forName(JDBC_DRIVER);
+		         c = DriverManager.getConnection(DB_URL,USER, PASS);
+		         c.setAutoCommit(false);
+		         stmt = c.createStatement();
+		         ResultSet rs = stmt.executeQuery( "select * from UserLoginDetails" );
+		         rs.close();
+		         stmt.close();
+		         c.close();
+		       } catch ( Exception e ) {
+		         System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+		         System.exit(0);
+		       }
+		       System.out.println("Operation done successfully");
+		  
+	  }
 	
 	@RequestMapping(value = "/health")
 	public void health() {
