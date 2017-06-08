@@ -72,14 +72,14 @@ public class GreetingController {
 		//BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
 		
 		// demonstrating architectural regression
-		//POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-		//for (int i = 0; i < 6; i++) {
-		//	POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
-		//	getAllUsersFromDB();
-		//}
+		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
+		for (int i = 0; i < 6; i++) {
+			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
+			getAllUsersFromDB();
+		}
 		
 
-/*		if (Long.compare(TIMESTAMP, 0l) == 0
+		if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
 			TIMESTAMP = (new Date()).getTime();
 
@@ -98,7 +98,7 @@ public class GreetingController {
 				LOG.error("Error: ", ex);
 			}
 		}
-*/		
+		
 		// System.out.println("HashMap size : "+ leakMap.size());
 //		new Greeting(MetricsRegistryClient.client().incrRequestCount(),
 //				String.format(template, name))
