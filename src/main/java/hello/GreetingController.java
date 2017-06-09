@@ -78,7 +78,6 @@ public class GreetingController {
 			getAllUsersFromDB();
 		}
 */		
-
 		if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
 			TIMESTAMP = (new Date()).getTime();
