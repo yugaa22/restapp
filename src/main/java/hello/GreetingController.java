@@ -56,7 +56,7 @@ public class GreetingController {
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 
 		// demonstrating memory leak
-		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
+/*		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
 			for (int i = 0; i < 30000; i++) {
 				String test = "" + i + "" + i + "" + i;
 				MEMORY_LEAK_TEST_STRING += test;
@@ -65,7 +65,7 @@ public class GreetingController {
 			String suffix = "0a1b2c3d4e";
 			MEMORY_LEAK_TEST_STRING += suffix;
 		}
-
+*/
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
 		//Commented the following line, causes problems with mem util
@@ -73,11 +73,11 @@ public class GreetingController {
 		
 		// demonstrating architectural regression
 		POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-/*		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 6; i++) {
 			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
 			getAllUsersFromDB();
 		}
-*/		
+		
 		if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
 			TIMESTAMP = (new Date()).getTime();
