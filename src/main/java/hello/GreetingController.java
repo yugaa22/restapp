@@ -77,7 +77,8 @@ public class GreetingController {
 			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
 			getAllUsersFromDB();
 		}
-*/		
+*/	
+		
 		if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
 			TIMESTAMP = (new Date()).getTime();
