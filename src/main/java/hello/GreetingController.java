@@ -213,7 +213,7 @@ public class GreetingController {
 			}
 			catch (UnknownHostException ex)
 			{
-			    System.out.println("Hostname cannot be resolved.");
+			    System.out.println("Hostname cannot be resolved ... blah");
 			}
 			
 			putCommand.append("host="+hostname+" \n");
