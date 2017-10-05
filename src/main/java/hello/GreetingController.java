@@ -185,7 +185,7 @@ public class GreetingController {
 			String value) {
 
 		if (metricName != null) {
-			LOG.debug("The metric name and the key is : {}, {}", metricName,
+			LOG.debug("The metric name and the key is Hello! : {}, {}", metricName,
 					value);
 			System.out.println("The metric name and the key is : " + metricName
 					+ ", " + value);
