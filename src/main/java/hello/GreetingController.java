@@ -185,7 +185,7 @@ public class GreetingController {
 			String value) {
 
 		if (metricName != null) {
-			LOG.debug("The metric name and the key is Hello! : {}, {}", metricName,
+			LOG.debug("The metric name and the key is : {}, {}", metricName,
 					value);
 			System.out.println("The metric name and the key is : " + metricName
 					+ ", " + value);
@@ -213,7 +213,7 @@ public class GreetingController {
 			}
 			catch (UnknownHostException ex)
 			{
-			    System.out.println("Hostname can not be resolved");
+			    System.out.println("Hostname really cannot be resolved");
 			}
 			
 			putCommand.append("host="+hostname+" \n");
