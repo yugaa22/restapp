@@ -44,7 +44,7 @@ public class GreetingController {
 	public static int POSTGRES_NUM_OPS_METRIC_COUNT = 0;
 	
 	public static final String JDBC_DRIVER = "org.postgresql.Driver";  
-	public static final String DB_URL = "jdbc:postgresql://34.211.245.91:5432/opsmx";//172.9.239.142
+	public static final String DB_URL = "jdbc:postgresql://52.52.72.239:5432/opsmx";//172.9.239.142
 //	public static final String DB_URL = "jdbc:postgresql://localhost:5432/opsmx";//172.9.239.142 
 
 	
@@ -82,7 +82,7 @@ public class GreetingController {
 		}
 	*/
 		
-		if (Long.compare(TIMESTAMP, 0l) == 0
+		/*if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
 			TIMESTAMP = (new Date()).getTime();
 
@@ -100,7 +100,7 @@ public class GreetingController {
 			} catch (IOException ex) {
 				LOG.error("Error: ", ex);
 			}
-		}
+		}*/
 		
 		// System.out.println("HashMap size : "+ leakMap.size());
 //		new Greeting(MetricsRegistryClient.client().incrRequestCount(),
