@@ -46,6 +46,7 @@ public class GreetingController {
 	public static final String JDBC_DRIVER = "org.postgresql.Driver";  
 	public static final String DB_URL = "jdbc:postgresql://52.52.72.239:5432/opsmx";//172.9.239.142
 //	public static final String DB_URL = "jdbc:postgresql://localhost:5432/opsmx";//172.9.239.142 
+	// comment goes here
 
 	
 	public static final String USER = "postgres";
