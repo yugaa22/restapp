@@ -57,8 +57,8 @@ public class GreetingController {
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 
 		// demonstrating memory leak
-	/*	if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
-			for (int i = 0; i < 30000; i++) {
+		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
+			for (int i = 0; i < 3000; i++) {
 				String test = "" + i + "" + i + "" + i;
 				MEMORY_LEAK_TEST_STRING += test;
 			}
@@ -72,13 +72,14 @@ public class GreetingController {
 		//Commented the following line, causes problems with mem util
 		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
 		
-	*/
+	
 		
 	
 		//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
 		for (int i = 0; i < 6; i++) {
 			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
-			//getAllUsersFromDB();
+			getAllUsersFromDB();
+			
 		}
 	
 		
