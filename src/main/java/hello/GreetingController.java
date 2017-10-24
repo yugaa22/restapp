@@ -78,7 +78,7 @@ public class GreetingController {
 		//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
 		for (int i = 0; i < 6; i++) {
 			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
-			getAllUsersFromDB();
+			//getAllUsersFromDB();
 		}
 	
 		
