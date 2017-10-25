@@ -75,12 +75,12 @@ public class GreetingController {
 		
 	
 		//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-		for (int i = 0; i < 10; i++) {
+	/*	for (int i = 0; i < 10; i++) {
 			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
 			getAllUsersFromDB();
 			
 		}
-	
+	*/
 		
 		/*if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
@@ -105,7 +105,7 @@ public class GreetingController {
 		// System.out.println("HashMap size : "+ leakMap.size());
 //		new Greeting(MetricsRegistryClient.client().incrRequestCount(),
 //				String.format(template, name))
-		return "HashMap size is : "+ BAD_KEY_MAP.size() + "\n String length is  : " + MEMORY_LEAK_TEST_STRING.length();
+		return "HashMap size  : "+ BAD_KEY_MAP.size() + "\n String length is  : " + MEMORY_LEAK_TEST_STRING.length();
 //		return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
 
