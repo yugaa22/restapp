@@ -86,6 +86,7 @@ public class GreetingController {
 			    e.printStackTrace();
 		         }
 		}*/
+		
 	       // END of architectural regression code
 	       	
 		/*if (Long.compare(TIMESTAMP, 0l) == 0
