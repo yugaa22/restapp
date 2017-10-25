@@ -51,16 +51,17 @@ public class GreetingController {
 	
 	public static final String USER = "postgres";
 	public static final String PASS = "networks123";
+	public static String testData = "latency";
 	// System.out.println("GCE");
 
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 
 		// demonstrating memory leak
-	/*	if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
+		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
 			for (int i = 0; i < 3000; i++) {
-				String test = "" + i + "" + i + "" + i;
-				MEMORY_LEAK_TEST_STRING += test;
+				//String test = "" + i + "" + i + "" + i;
+				MEMORY_LEAK_TEST_STRING += testData;
 		         }
 		 } else {
 		      String suffix = "0a1b2c3d4e";
@@ -72,14 +73,14 @@ public class GreetingController {
 		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
 	
 		// END of Memory leak
-	*/	
+		
 	
 		//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-		for (int i = 0; i < 10; i++) {
+		/*for (int i = 0; i < 10; i++) {
 			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
 			getAllUsersFromDB();
 			
-		}
+		}*/
 	
 		
 		/*if (Long.compare(TIMESTAMP, 0l) == 0
