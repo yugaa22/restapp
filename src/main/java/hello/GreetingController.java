@@ -72,17 +72,22 @@ public class GreetingController {
 		//Commented the following line, causes problems with mem util
 		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
 	
-		// END of Memory leak
+		// END of Memory leak code 
 	*/	
 	
 		//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
 		 for (int i = 0; i < 10; i++) {
 			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
-			getAllUsersFromDB();
-		        Thread.sleep(2);	
+			 try {
+			    getAllUsersFromDB();
+			    //sleep 2 mili seconds
+			    Thread.sleep(2);
+			  } catch (InterruptedException e) {
+			    e.printStackTrace();
+		         }
 		}
-	
-		
+	       // END of architectural regression code
+	       	
 		/*if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
 			TIMESTAMP = (new Date()).getTime();
