@@ -59,7 +59,7 @@ public class GreetingController {
 
 		// demonstrating memory leak
 		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
-			for (int i = 0; i < 3001; i++) {
+			for (int i = 0; i < 3000; i++) {
 				//String test = "" + i + "" + i + "" + i;
 				//MEMORY_LEAK_TEST_STRING += testData;
 		         }
@@ -112,7 +112,7 @@ public class GreetingController {
 		// System.out.println("HashMap size : "+ leakMap.size());
 //		new Greeting(MetricsRegistryClient.client().incrRequestCount(),
 //				String.format(template, name))
-		return "HashMap size  : "+ BAD_KEY_MAP.size() + "\n String length  : " + MEMORY_LEAK_TEST_STRING.length();
+		return "HashMap size is : "+ BAD_KEY_MAP.size() + "\n String length is : " + MEMORY_LEAK_TEST_STRING.length();
 //		return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
 
