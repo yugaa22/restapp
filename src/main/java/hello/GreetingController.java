@@ -64,15 +64,15 @@ public class GreetingController {
 				//MEMORY_LEAK_TEST_STRING += testData;
 		         }
 		 } else {
-		      String suffix = "0a1b2c3d4e";
+		      String suffix = "0a1b2c3d4e5";
 		      MEMORY_LEAK_TEST_STRING += suffix;
 		}
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
 		//Commented the following line, causes problems with mem util
-		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		
-	
-		// END of Memory leak code 
+		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);	
+		
+	// END of Memory leak code 
 		
 	
 		//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
