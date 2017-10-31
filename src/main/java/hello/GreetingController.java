@@ -61,7 +61,7 @@ public class GreetingController {
 		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
 			for (int i = 0; i < 10000; i++) {
 				String test = "" + i + "" + i + "" + i;
-				MEMORY_LEAK_TEST_STRING += testData;
+				//MEMORY_LEAK_TEST_STRING += testData;
 		         }
 		 } else {
 		      String suffix = "0a1b2c3d4e5";
