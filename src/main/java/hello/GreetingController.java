@@ -76,7 +76,7 @@ public class GreetingController {
 		
 	
 		//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-		/* for (int i = 0; i < 10; i++) {
+		 for (int i = 0; i < 10; i++) {
 			POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
 			 try {
 			    getAllUsersFromDB();
@@ -85,7 +85,7 @@ public class GreetingController {
 			  } catch (InterruptedException e) {
 			    e.printStackTrace();
 		         }
-		}*/
+		}
 		
 	       // END of architectural regression code
 	       	
