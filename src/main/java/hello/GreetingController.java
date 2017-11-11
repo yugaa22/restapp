@@ -69,10 +69,10 @@ public class GreetingController {
 		}
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
-		//Commented the following line, causes problems with mem util
+		//Commented the following line, causes problems with mem util 
 		BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);	
 		
-	// END of Memory leak code 
+	// END of Memory leak code:
 		
 	
 		//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
