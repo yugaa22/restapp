@@ -112,7 +112,7 @@ public class GreetingController {
 		// System.out.println("HashMap size : "+ leakMap.size());
 //		new Greeting(MetricsRegistryClient.client().incrRequestCount(),
 //				String.format(template, name))
-		return "HashMap size  : "+ BAD_KEY_MAP.size() + "\n String length  : " + MEMORY_LEAK_TEST_STRING.length();
+		return "HashMap size is : "+ BAD_KEY_MAP.size() + "\n String length  : " + MEMORY_LEAK_TEST_STRING.length();
 //		return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
 
