@@ -57,7 +57,7 @@ public class GreetingController {
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 
-		//  memory leakdemonstrating
+	// memory leakdemonstrating
 		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
 			for (int i = 0; i < 10000; i++) {
 				String test = "" + i + "" + i + "" + i;
@@ -75,18 +75,18 @@ public class GreetingController {
 	// END of Memory leak code:
 		
 	
-		//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-         		 for (int i = 0; i < 10; i++) {
-			 try {
-		            POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
-			    getAllUsersFromDB();
-			    //sleep 2 mili seconds
-			    Thread.sleep(2);
-			  } catch (InterruptedException e) {
-			    e.printStackTrace();
-		         }
+	//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
+       /*  	for (int i = 0; i < 10; i++) {
+		 try {
+		      POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
+		      getAllUsersFromDB();
+		     //sleep 2 mili seconds
+		      Thread.sleep(2);
+		    } catch (InterruptedException e) {
+		      e.printStackTrace();
+		   }
 		}
-		
+	*/	
 	       // END of architectural regression code
 	       	
 		/*if (Long.compare(TIMESTAMP, 0l) == 0
