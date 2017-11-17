@@ -14,7 +14,6 @@ import org.springframework.context.annotation.DependsOn;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 
-
 @ConfigurationProperties(prefix = "server", ignoreUnknownFields = true)
 
 @SpringBootApplication
@@ -23,8 +22,6 @@ public class Application {
     private String rmiHost;
     @Value("${jmx.rmi.port:9012}")
     private Integer rmiPort;
-   
-   
     
     @Bean
     public RmiRegistryFactoryBean rmiRegistry()  throws Exception {
