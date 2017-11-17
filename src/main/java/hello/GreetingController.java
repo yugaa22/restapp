@@ -57,7 +57,7 @@ public class GreetingController {
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 
-	// memory leakdemonstrating
+		//  memory leakdemonstrating
 		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
 			for (int i = 0; i < 10000; i++) {
 				String test = "" + i + "" + i + "" + i;
@@ -70,24 +70,18 @@ public class GreetingController {
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
 		//Commented the following line, causes problems with mem util 
-	//BAD_KEY_MAP.put(badKey,	"" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);	
+	     //    BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);	
 		  
 	// END of Memory leak code:
 		
-	
 	//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-     /*   	for (int i = 0; i < 10; i++) {
-		 try {
-		      POSTGRES_NUM_OPS_METRIC_COUNT += (i + 1);
-		      getAllUsersFromDB();
-		     //sleep 2 mili seconds
-		      Thread.sleep(2);
-		    } catch (InterruptedException e) {
-		      e.printStackTrace();
-		   }
-		}
+        //Architectural Regression implementation has been shifted to ArchRegress.java, here only calling thread class.
+	 /*		
+		ArchRegress test = new ArchRegress();
+		Thread th = new Thread(test);
+		th.start();
 	*/	
-	       // END of architectural regression code
+             // END of architectural regression code
 	       	
 		/*if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
@@ -118,7 +112,7 @@ public class GreetingController {
 
 	
 
-	public void getAllUsersFromDB(){
+	/*public void getAllUsersFromDB(){
 		       Connection c = null;
 		       Statement stmt = null;
 		       try {
@@ -140,7 +134,7 @@ public class GreetingController {
 		       }
 		       System.out.println("Operation done successfully");
 		  
-	  }
+	  }*/
 	
 	@RequestMapping(value = "/health")
 	public void health() {
@@ -254,7 +248,5 @@ public class GreetingController {
 			this.key = key;
 		}
 	}
-	
-
 
 }
