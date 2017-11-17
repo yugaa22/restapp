@@ -1,6 +1,6 @@
 FROM java:8
 
-ADD target/restapp-0.1.0.jar /restapp-0.1.0.jar
+ADD target/restapp.jar /restapp.jar
 COPY run.sh /usr/local/bin/run.sh
 RUN chmod +x /usr/local/bin/run.sh
 COPY tomcat.yaml /etc/dd-agent/conf.d/tomcat.yaml
