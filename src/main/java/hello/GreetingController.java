@@ -17,8 +17,6 @@ import java.io.PrintWriter;
 import java.lang.management.*;
 
 import javax.management.*;
-
-//import java.util.Set;
 import java.math.BigDecimal;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -44,10 +42,9 @@ public class GreetingController {
 	public static int POSTGRES_NUM_OPS_METRIC_COUNT = 0;
 	
 	public static final String JDBC_DRIVER = "org.postgresql.Driver";  
-	public static final String DB_URL = "jdbc:postgresql://54.193.82.193:5432/opsmx";//172.9.239.142
-//	public static final String DB_URL = "jdbc:postgresql://localhost:5432/opsmx";//172.9.239.142 
-	// comment goes here
-
+	public static final String DB_URL = "jdbc:postgresql://54.193.82.193:5432/opsmx";//172.9.239.1xx
+//	public static final String DB_URL = "jdbc:postgresql://localhost:5432/opsmx";//172.9.239.1xx 
+	
 	
 	public static final String USER = "postgres";
 	public static final String PASS = "networks123";
@@ -57,7 +54,7 @@ public class GreetingController {
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 
-		//  memory leakdemonstrating
+		// ***** memory leakdemonstrating  *****//
 		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
 			for (int i = 0; i < 10000; i++) {
 				String test = "" + i + "" + i + "" + i;
@@ -69,19 +66,19 @@ public class GreetingController {
 		}
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
-		//Commented the following line, causes problems with mem util 
-	     //    BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);	
-		  
-	// END of Memory leak code:
+		  //Commented the following line, causes problems with mem util 
+	     //  BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		  
+	     
+		//***End of Memory leak code ***//
 		
-	//demonstrating architectural regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
-        //Architectural Regression implementation has been shifted to ArchRegress.java, here only calling thread class.
-	 /*		
+	   //Demonstrating Architectural Regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
+           //Architectural Regression implementation has been shifted to ArchRegress.java, here only calling thread class.
+	   /*		
 		ArchRegress test = new ArchRegress();
 		Thread th = new Thread(test);
 		th.start();
-	*/	
-             // END of architectural regression code
+	   */	
+           // **** End of architectural regression code ***//
 	       	
 		/*if (Long.compare(TIMESTAMP, 0l) == 0
 				|| Long.compare(((new Date()).getTime() - TIMESTAMP), 5000) >= 0) {
@@ -104,13 +101,11 @@ public class GreetingController {
 		}*/
 		
 		// System.out.println("HashMap size : "+ leakMap.size());
-//		new Greeting(MetricsRegistryClient.client().incrRequestCount(),
-//				String.format(template, name))
+       	       // new Greeting(MetricsRegistryClient.client().incrRequestCount(),String.format(template, name))
 		return "HashMap size  : "+ BAD_KEY_MAP.size() + "\n String length  : " + MEMORY_LEAK_TEST_STRING.length();
-//		return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
+            // 	return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
 
-	
 
 	/*public void getAllUsersFromDB(){
 		       Connection c = null;
