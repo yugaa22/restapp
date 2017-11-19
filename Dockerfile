@@ -1,5 +1,6 @@
 FROM java:8
 
+RUN apt-get update && apt-get install stress-ng -y
 ADD target/restapp.jar /restapp.jar
 COPY dockerrun.sh /usr/local/bin/dockerrun.sh
 RUN chmod +x /usr/local/bin/dockerrun.sh
