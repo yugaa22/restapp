@@ -133,7 +133,8 @@ public class GreetingController {
 	  }*/
 	
 	@RequestMapping(value = "/health")
-	public void health() {
+	public String health() {
+	      return " @@@@@@ Welcome to  Strategy World  @@@@@@";
 	}
 
 	@RequestMapping(value = "/mbeans")
