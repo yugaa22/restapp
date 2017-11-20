@@ -132,8 +132,8 @@ public class GreetingController {
 		  
 	  }*/
 	
-	@RequestMapping(value = "/health")
-	public String health() {
+	@RequestMapping(value = "/status")
+	public String getStatus() {
 	      return " @@@@@@ Welcome to  Strategy World  @@@@@@";
 	}
 
