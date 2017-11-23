@@ -67,7 +67,7 @@ public class GreetingController {
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
 		  //Commented the following line, causes problems with mem util 
-	        BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		  
+	       // BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		  
 	     
 		//***End of Memory leak code ***//
 		
