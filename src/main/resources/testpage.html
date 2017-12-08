@@ -1,80 +1,62 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Pet Store</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <title>Pet Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.value('baseUrl', "//" + window.location.host);
+        app.controller('myCtrl', function($scope, $http, baseUrl) {
+            /* var res = { "dogCount": 330 };
+            $scope.dogData = res.dogCount; */
+            $http({
+                method: 'GET',
+                url: baseUrl + "/dogcount",
+                headers: {
+                    'content-type': 'application/json'
+                },
+            }).then(function(res) {
+                $scope.dogCount = res.data.dogCount;
+            });
+
+            $http({
+                method: 'GET',
+                url: baseUrl + "/catcount",
+                headers: {
+                    'content-type': 'application/json'
+                },
+            }).then(function(res) {
+                $scope.catCount = res.data.catCount;
+
+            });
+
+        });
+    </script>
 </head>
-<body ng-app="myApp" ng-controller="myCtrl">
-<div class="container">
-  <h2 class="text-center">Welcome to Pet Store</h2><br>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="thumbnail" data-text='Text 1' href="">
-          <img src="http://ghk.h-cdn.co/assets/16/11/gettyimages-500937971.jpg"  style="width:100%"><br>
-            <p class="icon-text text-center">No.of dogs available : {{dogData}}</p>
-      </div>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl" class="container">
+        <h2 class="text-center">Welcome to Pet Store</h2><br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="thumbnail" data-text='Text 1' href="">
+                    <img src="http://ghk.h-cdn.co/assets/16/11/gettyimages-500937971.jpg" style="width:100%"><br>
+                    <p class="icon-text text-center">No.of dogs available : {{dogCount}}</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="thumbnail" data-text='Text 2'>
+                    <img src="http://cdn.pet360.com/pet360/Content/Images/CMS/Slideshows/cats-that-stay-small1.jpg" alt="Nature" style="width:100%"><br>
+                    <p class="icon-text text-center">No.of cats available : {{catCount}}</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-      <div class="thumbnail" data-text='Text 2'>
-          <img src="http://cdn.pet360.com/pet360/Content/Images/CMS/Slideshows/cats-that-stay-small1.jpg" alt="Nature" style="width:100%"><br>
-            <p class="icon-text text-center">No.of cats available : {{catData}}</p>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
-<!-- <script>
-$(function() {
-	//for mobile do this
-  
-  //Hide icon text on page load
-  $('p.icon-text').hide();
-  
-  //On image click toggle display icon text
-  $('img').click(function() {
-  	//alert('clicked');
-    $(this).siblings('p.icon-text').toggle();
-  });
-})
-</script> -->
-<script>
-var app = angular.module('myApp', []);
-app.value('baseUrl', "//"+window.location.host);
-app.controller('myCtrl', function($scope, $http,baseUrl) {
-	
-	/* var res = { "dogCount": 330 };
-	$scope.dogData = res.dogCount; */
-	
-     $http({
-        method: "GET",
-        url: baseUrl + "/dogcount",
-        headers: {
-            'content-type': 'application/json'
-        },
-    }).success(function(res) {
-        $scope.$scope.dogData = res.dogCount; 
 
-    }).error(function(response) {})
-    
-     $http({
-        method: "GET",
-        url: baseUrl + "/catcount",
-        headers: {
-            'content-type': 'application/json'
-        },
-    }).success(function(res) {
-        $scope.catData = res.catCount; 
-
-    }).error(function(response) {})
-	 
-	
-});
-</script>
 </html>
-
-

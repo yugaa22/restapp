@@ -11,8 +11,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.lang.management.*;
 
@@ -23,6 +27,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.*;
 
+@CrossOrigin
 @RestController
 public class GreetingController {
 
@@ -103,7 +108,20 @@ public class GreetingController {
 		
 		// System.out.println("HashMap size : "+ leakMap.size());
        	       // new Greeting(MetricsRegistryClient.client().incrRequestCount(),String.format(template, name))
-		return "HashMap size  : "+ BAD_KEY_MAP.size() + "\n String length  : " + MEMORY_LEAK_TEST_STRING.length() +"\n ";
+		//return "HashMap size  : "+ BAD_KEY_MAP.size() + "\n String length  : " + MEMORY_LEAK_TEST_STRING.length() +"\n ";
+		String query;
+		StringBuffer sb = new StringBuffer();
+		ClassLoader cl = GreetingController.class.getClassLoader();
+		try{
+			BufferedReader br = new BufferedReader(new InputStreamReader(cl.getResource("testpage.html").openStream()));
+			while((query=br.readLine())!=null)
+				sb.append(query);	
+			br.close();
+		}catch(Exception e){ e.printStackTrace();};
+
+		
+		
+		return sb.length()>0 ? sb.toString() : " No page found";
             // 	return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
 
@@ -131,6 +149,16 @@ public class GreetingController {
 		       System.out.println("Operation done successfully");
 		  
 	  }*/
+	
+	@RequestMapping("/dogcount")
+	public String dogCount() {
+	      return "{ \"dogCount\": 20 }";
+	}
+	
+	@RequestMapping("/catcount")
+	public String catCount() {
+	      return "{ \"catCount\": 30 }";
+	}
 	
 	@RequestMapping("/status")
 	public String getStatus() {
