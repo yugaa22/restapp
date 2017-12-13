@@ -75,7 +75,7 @@ public class GreetingController {
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
 		  //Commented the following line, causes problems with mem util 
-	       // BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		  
+	        BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		  
 	     
 		//***End of Memory leak code ***//
 		
@@ -162,7 +162,7 @@ public class GreetingController {
 	public String catCount() {
 	      String result="{ \"catCount\": 0 }";
 		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
-		try{
+		/*try{
 			for (int i=0; i<=10; i++)
 			{
 				URL url = new URL("http://35.192.98.201:8080/catcount");
@@ -188,7 +188,7 @@ public class GreetingController {
 			mue.printStackTrace();
 		}catch(IOException io){
 			io.printStackTrace();
-		}
+		}*/
 		/* till here */
 		
 	      return result;
