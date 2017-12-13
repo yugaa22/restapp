@@ -25,6 +25,9 @@ import java.math.BigDecimal;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.net.URL;
+import java.net.MalformedURLException;
+import java.net.HttpURLConnection;
 import java.util.*;
 
 @CrossOrigin
@@ -157,7 +160,38 @@ public class GreetingController {
 	
 	@RequestMapping("/catcount")
 	public String catCount() {
-	      return "{ \"catCount\": 30 }";
+	      String result="{ \"catCount\": 0 }";
+		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
+		try{
+			for (int i=0; i<=10; i++)
+			{
+				URL url = new URL("http://35.192.98.201:8080/catcount");
+				HttpURLConnection con = (HttpURLConnection)url.openConnection();
+				con.setRequestMethod("GET");
+				con.setDoOutput(true);
+				con.setInstanceFollowRedirects(false);
+				
+				System.out.println("con.getResponseCode() ::"+con.getResponseCode());
+				System.out.println(con.getResponseMessage());
+				
+				BufferedReader br2 = new BufferedReader(new InputStreamReader(con.getInputStream()));
+				String response2; StringBuffer res2 = new StringBuffer();
+				while ((response2=br2.readLine())!=null)
+					res2.append(response2);
+					
+				System.out.println(res2);
+				if (!res2.toString().isEmpty())
+					result=res2.toString();
+			}
+			
+		}catch(MalformedURLException mue){
+			mue.printStackTrace();
+		}catch(IOException io){
+			io.printStackTrace();
+		}
+		/* till here */
+		
+	      return result;
 	}
 	
 	@RequestMapping("/status")
