@@ -175,10 +175,6 @@ public class GreetingController {
 		String result="{ \"catCount\": 0 }";
 		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
 		try{
-			for (int i=0; i<=10; i++)
-	      String result="{ \"catCount\": 0 }";
-		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
-		try{
 			for (int i=0; i<=1000; i++)
 			{
 				URL url = new URL("http://35.192.98.201:8080/catcount");
