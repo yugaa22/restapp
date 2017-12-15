@@ -22,8 +22,11 @@ import java.lang.management.*;
 
 import javax.management.*;
 import java.math.BigDecimal;
+import java.net.HttpURLConnection;
 import java.net.InetAddress;
+import java.net.MalformedURLException;
 import java.net.Socket;
+import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.*;
 
@@ -111,17 +114,26 @@ public class GreetingController {
 		//return "HashMap size  : "+ BAD_KEY_MAP.size() + "\n String length  : " + MEMORY_LEAK_TEST_STRING.length() +"\n ";
 		String query;
 		StringBuffer sb = new StringBuffer();
+		String query2;
+		StringBuffer sb2 = new StringBuffer();
+		
 		ClassLoader cl = GreetingController.class.getClassLoader();
 		try{
 			BufferedReader br = new BufferedReader(new InputStreamReader(cl.getResource("testpage.html").openStream()));
 			while((query=br.readLine())!=null)
 				sb.append(query);	
 			br.close();
+			BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getResource("dog1").openStream()));
+			while((query2=br2.readLine())!=null)
+				sb2.append(query2);	
+			br2.close();
+			
+			
 		}catch(Exception e){ e.printStackTrace();};
 
 		
 		
-		return sb.length()>0 ? sb.toString() : " No page found";
+		return sb.length()>0 ? sb.toString().replace("##dogimage##", sb2.toString()) : " No page found";
             // 	return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
 
@@ -157,7 +169,38 @@ public class GreetingController {
 	
 	@RequestMapping("/catcount")
 	public String catCount() {
-	      return "{ \"catCount\": 30 }";
+		String result="{ \"catCount\": 0 }";
+		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
+		try{
+			for (int i=0; i<=10; i++)
+			{
+				URL url = new URL("http://35.192.98.201:8080/catcount");
+				HttpURLConnection con = (HttpURLConnection)url.openConnection();
+				con.setRequestMethod("GET");
+				con.setDoOutput(true);
+				con.setInstanceFollowRedirects(false);
+				
+				System.out.println("con.getResponseCode() ::"+con.getResponseCode());
+				System.out.println(con.getResponseMessage());
+				
+				BufferedReader br2 = new BufferedReader(new InputStreamReader(con.getInputStream()));
+				String response2; StringBuffer res2 = new StringBuffer();
+				while ((response2=br2.readLine())!=null)
+					res2.append(response2);
+					
+				System.out.println(res2);
+				if (!res2.toString().isEmpty())
+					result=res2.toString();
+			}
+			
+		}catch(MalformedURLException mue){
+			mue.printStackTrace();
+		}catch(IOException io){
+			io.printStackTrace();
+		}
+		/* till here */
+		
+	      return result;
 	}
 	
 	@RequestMapping("/status")
