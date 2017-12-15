@@ -126,7 +126,7 @@ public class GreetingController {
 			while((query=br.readLine())!=null)
 				sb.append(query);	
 			br.close();
-			BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getResource("dog1").openStream()));
+			BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getResource("dog2").openStream()));
 			while((query2=br2.readLine())!=null)
 				sb2.append(query2);	
 			br2.close();
