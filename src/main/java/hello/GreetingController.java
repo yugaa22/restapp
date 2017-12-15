@@ -28,6 +28,9 @@ import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.net.URL;
+import java.net.MalformedURLException;
+import java.net.HttpURLConnection;
 import java.util.*;
 
 @CrossOrigin
@@ -75,7 +78,7 @@ public class GreetingController {
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
 		  //Commented the following line, causes problems with mem util 
-	       // BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		  
+	        //BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		  
 	     
 		//***End of Memory leak code ***//
 		
@@ -169,10 +172,17 @@ public class GreetingController {
 	
 	@RequestMapping("/catcount")
 	public String catCount() {
+<<<<<<< HEAD
 		String result="{ \"catCount\": 0 }";
 		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
 		try{
 			for (int i=0; i<=10; i++)
+=======
+	      String result="{ \"catCount\": 0 }";
+		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
+		try{
+			for (int i=0; i<=1000; i++)
+>>>>>>> e3ae0b3f258773d3179041ff871b8844c4c6034d
 			{
 				URL url = new URL("http://35.192.98.201:8080/catcount");
 				HttpURLConnection con = (HttpURLConnection)url.openConnection();
