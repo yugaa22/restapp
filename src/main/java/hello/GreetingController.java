@@ -127,11 +127,12 @@ public class GreetingController {
 				sb.append(query);	
 			br.close();
 			
-			String whichdog = "dog1";
+			/*String whichdog = "dog1";
 			if(10.0*Math.random()>5.0)
 				whichdog = "dog2";			
 			
-			BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getResource(whichdog).openStream()));
+			BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getResource(whichdog).openStream()));*/
+			BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getResource("dog1").openStream()));
 			while((query2=br2.readLine())!=null)
 				sb2.append(query2);	
 			br2.close();
