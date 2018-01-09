@@ -127,11 +127,11 @@ public class GreetingController {
 				sb.append(query);	
 			br.close();
 			
-			  String whichdog = "dog1";
+			  //String whichdog = "dog1";
 			
 			/* Introducing Arch. regression*/
 			      //if(10.0*Math.random()>5.0)
-			    // String whichdog = "dog2";
+			     String whichdog = "dog2";
 			/*till here*/
 			
 			BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getResource(whichdog).openStream()));
