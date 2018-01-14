@@ -131,7 +131,7 @@ public class GreetingController {
 			
 			/* Introducing Arch. regression*/
 			           
-			         // whichdog = "dog2";
+			          whichdog = "dog2";
 			/*till here*/
 			
 			BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getResource(whichdog).openStream()));
