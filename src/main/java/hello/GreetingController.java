@@ -218,6 +218,14 @@ public class GreetingController {
 	public String getStatus() {
 	      return " @@@@@@ Welcome to  Strategy World  @@@@@@";
 	}
+	
+	@RequestMapping("/internalError")
+	public void internalError() {
+		System.out.println("Inside error");
+		Double d= 15.15/0;
+		d= d+1;
+		throw new NullPointerException();
+	}
 
 	@RequestMapping(value = "/mbeans")
 	public void mbeans() throws Exception {
