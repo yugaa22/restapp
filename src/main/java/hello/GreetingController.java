@@ -128,7 +128,7 @@ public class GreetingController {
 			br.close();
 			
 			  String whichdog = "dog1";
-			  Thread.sleep(1000);
+			  Thread.sleep(50);
 			
 			/* Introducing Arch. regression*/
 			      //if(10.0*Math.random()>5.0)
