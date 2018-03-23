@@ -133,7 +133,7 @@ public class GreetingController {
 			
 			/* Introducing Arch. regression*/
 			      //if(10.0*Math.random()>5.0)
-			      // whichdog = "dog2"; // heavier file (1MB)
+			      whichdog = "dog2"; // heavier file (1MB)
 			/*till here*/
 			
 			BufferedReader br2 = new BufferedReader(new InputStreamReader(cl.getResource(whichdog).openStream()));
