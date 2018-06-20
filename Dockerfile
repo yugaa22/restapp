@@ -4,7 +4,7 @@ ENV server_port=8080
 
 RUN apt-get update && apt-get install stress-ng -y
 
-ADD /restapp.jar /opt/restapp.jar
+COPY /restapp.jar /opt/restapp.jar
 COPY dockerrun.sh /usr/local/bin/dockerrun.sh
 RUN chmod +x /usr/local/bin/dockerrun.sh
 COPY newrelic/* /opt/newrelic/
