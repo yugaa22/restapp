@@ -1,5 +1,7 @@
 FROM java:8
 
+ENV server_port=8080
+
 RUN apt-get update && apt-get install stress-ng -y
 
 ADD target/restapp.jar /opt/restapp.jar
