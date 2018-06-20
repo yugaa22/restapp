@@ -1,5 +1,5 @@
 #!/bin/bash
-nohup java -javaagent:/opt/jmx_prometheus_javaagent-0.1.0.jar=9090:tomcat.yml -jar /opt/restapp.jar > /var/log/rest_service.log 2>&1 &
+cd /opt;nohup java -javaagent:/opt/jmx_prometheus_javaagent-0.1.0.jar=9090:tomcat.yml -jar /opt/restapp.jar > /var/log/rest_service.log 2>&1 &
 #nohup java -Dserver.port=8095 -jar /opt/restapp.jar  > /var/log/rest_service.log 2>&1 &
 #hostname="hostname: `hostname`"
 #nohup stress-ng --vm 4 &
