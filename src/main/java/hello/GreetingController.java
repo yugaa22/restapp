@@ -65,8 +65,8 @@ public class GreetingController {
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 
-		// ***** memory leakdemonstrating  *****//
-		if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
+	// ***** memory leakdemonstrating  *****//
+		/*if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
 			for (int i = 0; i < 10000; i++) {
 				String test = "" + i + "" + i + "" + i;
 				MEMORY_LEAK_TEST_STRING += testData;
@@ -77,9 +77,10 @@ public class GreetingController {
 		}
 		BadKey badKey = new BadKey("");
 		badKey = new BadKey("" + (new Date().getTime()));
-		  //Commented the following line, causes problems with mem util 
+	    
+		    //Commented the following line, causes problems with mem util 
 	        //BAD_KEY_MAP.put(badKey, "" + (new Date().getTime()) + "-" + (new Date().getTime()) + MEMORY_LEAK_TEST_STRING);		  
-	     
+	       */
 		//***End of Memory leak code ***//
 		
 	   //Demonstrating Architectural Regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
