@@ -1,4 +1,4 @@
-FROM java:8
+FROM opsmx11/java:14.04-openjdk-8-jdk
 
 ENV server_port=8080
 
