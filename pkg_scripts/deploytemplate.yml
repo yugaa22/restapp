@@ -1,0 +1,93 @@
+variables:
+- name: dockerregistryaccount
+  description: Required for docker based trigger
+  defaultValue: my-docker-registry
+- name: enabletrigger
+  description: Enables trigger
+  type: boolean
+  defaultValue: true
+- name: registryorganization
+  description: Put docker registry organization name
+  defaultValue: opsmx
+- name: imagetag
+  description: (Optional)
+  defaultValue: latest
+- name: registryname
+  description: Put docker registry name
+  defaultValue: quay.io
+- name: registryrepo
+  description: Put docker registry repo
+  defaultValue: opsmx/spinnaker_spinnaker
+configuration:
+  concurrentExecutions:
+    limitConcurrent: true
+    parallel: false
+  triggers:
+  - account: "{{ dockerregistryaccount }}"
+    enabled: "{{ enabletrigger }}"
+    name: ptrigger
+    organization: "{{ registryorganization }}"
+    registry: "{{ registryname }}"
+    repository: "{{ registryrepo }}"
+    tag: "{{ imagetag }}"
+    type: docker
+id: K8demoapp-withparam
+metadata:
+  description: Deploy with trigger from registry change
+  name: K8demoapp-withparam
+  owner: anonymous
+  scopes:
+  - global
+protect: true
+schema: "1"
+stages:
+- config:
+    clusters:
+    - account: my-k8s-account
+#      application: demoapp
+      cloudProvider: kubernetes
+      containers:
+      - args: []
+        command: []
+        envFrom: []
+        envVars: []
+        imageDescription:
+          imageId: quay.io/opsmx/spinnaker_spinnaker:latest
+          registry: "{{ registryorganization }}"
+          repository: "{{ registryrepo }}"
+          tag: "{{ imagetag }}"
+        imagePullPolicy: ALWAYS
+        name: helloworld
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        - containerPort: 9090
+          name: prom
+          protocol: TCP
+        volumeMounts: []
+      dnsPolicy: ClusterFirst
+      events: []
+      initContainers: []
+      interestingHealthProviderNames:
+      - KubernetesContainer
+      - KubernetesPod
+      loadBalancers:
+      - helloworld-dev-frontend
+      namespace: halyard-rcdn
+      nodeSelector: {}
+      podAnnotations: {}
+      provider: kubernetes
+      region: default
+      replicaSetAnnotations: {}
+      securityGroups: []
+      stack: k8devcluster
+      strategy: highlander
+      targetSize: 1
+      terminationGracePeriodSeconds: 30
+      volumeSources: []
+  id: deploy2
+  inheritanceControl: {}
+  inject: {}
+  name: Staging-Deploy
+  type: deploy
