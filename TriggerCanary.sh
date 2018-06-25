@@ -96,10 +96,10 @@ if [ -z $logtemplate ]; then
 fi
 
 url="http://$servername:8090/registerCanary"
-jsondata="{\"application\" : \"prodk8\", \"canaryConfig\" : { \"canaryAnalysisConfig\" : { \"beginCanaryAnalysisAfterMins\" : \"0\",\"canaryAnalysisIntervalMins\" : \"$canaryAnalysisIntervalMins\",  \"lookbackMins\" : 0, \"name\" : \"metric-template:$metrictemplate;log-template:$logtemplate\", \"notificationHours\" : [ ], \"useLookback\" : false }, \"canaryHealthCheckHandler\" : {\"@class\" : \"com.netflix.spinnaker.mine.CanaryResultHealthCheckHandler\", \"minimumCanaryResultScore\" : \"$minimumCanaryScore\"}, \"canarySuccessCriteria\" : { \"canaryResultScore\" : \"$canaryResultScore\" },\"combinedCanaryResultStrategy\" : \"AGGREGATE\", \"lifetimeHours\" : \"$lifetimeHours\", \"name\" : \"$username\", \"application\" : \"prodk8\"}, \"canaryDeployments\" : [ { \"@class\" : \".CanaryTaskDeployment\", \"accountName\" : \"my-k8s-account\", \"baseline\" : \"$baseline\", \"baselineStartMs\": "$baselineStartMs", \"canary\" : \"$canary\", \"type\" : \"cluster\" } ], \"watchers\" : [ ]}"
+jsondata="{\"application\":\"prodk8\", \"canaryConfig\":{ \"canaryAnalysisConfig\":{ \"beginCanaryAnalysisAfterMins\": \"0\",\"canaryAnalysisIntervalMins\" : \"$canaryAnalysisIntervalMins\",  \"lookbackMins\" : 0, \"name\" : \"metric-template:$metrictemplate;log-template:$logtemplate\", \"notificationHours\" : [ ], \"useLookback\" : false }, \"canaryHealthCheckHandler\" : {\"@class\" : \"com.netflix.spinnaker.mine.CanaryResultHealthCheckHandler\", \"minimumCanaryResultScore\" : \"$minimumCanaryScore\"}, \"canarySuccessCriteria\" : { \"canaryResultScore\" : \"$canaryResultScore\" },\"combinedCanaryResultStrategy\" : \"AGGREGATE\", \"lifetimeHours\" : \"$lifetimeHours\", \"name\" : \"$username\", \"application\" : \"prodk8\"}, \"canaryDeployments\" : [ { \"@class\" : \".CanaryTaskDeployment\", \"accountName\" : \"my-k8s-account\", \"baseline\" : \"$baseline\", \"baselineStartMs\": "$baselineStartMs", \"canary\" : \"$canary\", \"type\" : \"cluster\" } ], \"watchers\" : [ ]}"
 
 response=$(curl -H  "Content-Type:application/json"  -X POST -d "$jsondata" "$url")
-
+echo $response
 # Adding Report URL to Canary ID
 #reportUrl="http://$servername:8161/opsmx-analysis/public/canaryAnalysis.html?canaryId=$response"
 
