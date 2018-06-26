@@ -44,7 +44,7 @@ stages:
 - config:
     clusters:
     - account: my-k8s-account
-      application: helloworld
+#      application: helloworld
       cloudProvider: kubernetes
       containers:
       - args: []
