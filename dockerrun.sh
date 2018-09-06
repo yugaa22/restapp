@@ -4,14 +4,15 @@
 
 
 ##====> for promethues
-(cd /opt;nohup java -javaagent:/opt/jmx_prometheus_javaagent-0.1.0.jar=9090:tomcat.yml -jar /opt/restapp.jar > /var/log/rest_service.log 2>&1 &)
-sudo chmod 775 /var/log/rest_service.log
-sudo tail -f /var/log/rest_service.log &
+#(cd /opt;nohup java -javaagent:/opt/jmx_prometheus_javaagent-0.1.0.jar=9090:tomcat.yml -jar /opt/restapp.jar > /var/log/rest_service.log 2>&1 &)
+#sudo chmod 775 /var/log/rest_service.log
+#sudo tail -f /var/log/rest_service.log &
 
 
 ##====> for newrelic
-#(cd /opt;nohup java  -Dserver.port=${server_port} -javaagent:/opt/newrelic/newrelic.jar -jar /opt/restapp.jar > /var/log/rest_service.log 2>&1 &)
-
+(cd /opt;nohup java  -Dserver.port=${server_port} -javaagent:/opt/newrelic/newrelic.jar -jar /opt/restapp.jar > /var/log/rest_service.log 2>&1 &)
+sudo chmod 775 /var/log/rest_service.log
+sudo tail -f /var/log/rest_service.log &
 
 #====> for datadog
 #hostname="hostname: `hostname`"
