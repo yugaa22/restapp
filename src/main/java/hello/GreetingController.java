@@ -112,6 +112,8 @@ public class GreetingController {
 				LOG.error("Error: ", ex);
 			}
 		}*/
+		LOG.info("Hello spark :: Inside greeting API");
+		System.out.println("Hello spark + Inside greeting API");
 		
 		// System.out.println("HashMap size : "+ leakMap.size());
        	       // new Greeting(MetricsRegistryClient.client().incrRequestCount(),String.format(template, name))
