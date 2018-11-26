@@ -7,7 +7,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'echo Building ${BRANCH_NAME}...'
-        sh 'sh env.mvnHome/bin/mvn clean package' 
+        sh 'sh /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn clean package' 
       }
     }
   }
