@@ -4,7 +4,7 @@ pipeline {
       pollSCM('H */4 * * 1-5')
   }
   stages {
-    stage('restapp build v5') {
+    stage('restapp build-v1') {
       steps {
         sh 'echo Building ${BRANCH_NAME} ....'
         sh 'sh /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn -e clean install' 
