@@ -1,11 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('restapp build b66') {
+    stage('restapp build') {
       steps {
         sh 'echo Building ${BRANCH_NAME} ....'
         sh 'sh /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn -e clean install' 
-        sh 'completed build ....'
+        sh 'completed build .....'
       }
     }
   }
