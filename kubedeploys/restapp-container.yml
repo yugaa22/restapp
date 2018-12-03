@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: opsmx-restapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opsmx-restapp
+  template:
+    metadata:
+      labels:
+        app: opsmx-restapp
+    spec:
+      containers:
+        - image: 'docker.io/opsmx11/restapp:simple-1.0'
+          imagePullPolicy: Always
+          name: restapp
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+            - containerPort: 9090
+              name: prometheus
+              protocol: TCP
