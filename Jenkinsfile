@@ -17,7 +17,7 @@ pipeline {
        steps {
          sh 'docker.withServer("tcp://localhost:4342")'
          sh 'echo Baking jar to docker image ...'
-         def Img = docker.build("opsmx11/restapp:$imgname")
+         sh 'docker.build("opsmx11/restapp:$imgname")
          sh 'echo Image id: $Img.id';
          sh "echo \"build\": \"1.0\" > restapp.txt";
          archiveArtifacts artifacts: 'restapp.txt'
