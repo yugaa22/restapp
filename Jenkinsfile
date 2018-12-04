@@ -4,7 +4,7 @@ pipeline {
      pollSCM('*/2 * * * *')
   }
   environment { 
-        imgname="sim-1.0"	
+        imgname="sim-1.0"
     }
   stages {
     stage('restapp build') {
@@ -15,7 +15,8 @@ pipeline {
       }
     }
 	stage('Build Docker Image'){
-         sh docker.withServer('tcp://localhost:4342'){
+	   steps {
+         sh docker.withServer('tcp://localhost:4342')
          sh echo "Baking jar to docker image ..."
          def Img = docker.build("opsmx11/restapp:$imgname")
          sh echo "Image id: $Img.id";
@@ -26,8 +27,10 @@ pipeline {
         }
     }
     stage('Push Image') {
-         sh "sudo docker login --username opsmx11 --password Networks123!";
-         sh "sudo docker push opsmx11/restapp:sim-1.0";
+	    steps {
+         sh "sudo docker login --username opsmx11 --password Networks123!"
+         sh "sudo docker push opsmx11/restapp:sim-1.0"
+		 }
     }
   }
 }
