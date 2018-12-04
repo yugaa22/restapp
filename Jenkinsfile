@@ -11,7 +11,7 @@ pipeline {
        steps {
           sh echo "Building ${BRANCH_NAME} ...."
           sh 'sh /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn -e clean install'
-          echo completed build .."
+          sh echo "completed build .."
         }
      }
      stage('Build Docker Image'){
