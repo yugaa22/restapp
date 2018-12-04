@@ -3,6 +3,10 @@ pipeline {
     triggers {
      pollSCM('*/2 * * * *')
   }
+  environment { 
+        imgname="sim-1.0"
+		
+    }
   stages {
     stage('restapp build') {
       steps {
@@ -14,8 +18,7 @@ pipeline {
 	stage('Build Docker Image'){
          sh docker.withServer('tcp://localhost:4342'){
          sh echo "Baking jar to docker image ..."
-		 sh def imgname="sim-1.0"
-         sh def Img = docker.build("opsmx11/restapp:$imgname")
+         def Img = docker.build("opsmx11/restapp:$imgname")
          sh echo "Image id: $Img.id";
          sh echo "Build no: $BUILD_NUMBER";
          sh "echo \"build\": \"1.0\" > restapp.txt";
