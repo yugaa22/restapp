@@ -19,7 +19,7 @@ pipeline {
          //sh 'echo Baking jar to docker image ...'
 	 sh """
           docker build -t  opsmx11/restapp:${IMAGE} .
-	  sh "echo \"${IMAGE}\" > restapp.txt";
+	  "echo \"${IMAGE}\" > restapp.txt";
           docker push opsmx11/restapp:${IMAGE} 
         """
         }
