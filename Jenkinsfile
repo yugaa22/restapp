@@ -3,9 +3,6 @@ pipeline {
     triggers {
       pollSCM('*/2 * * * *')
     }
-  environment { 
-        imgname="sim-1.0"
-    }
   stages {
      stage('restapp build') {
        steps {
@@ -14,6 +11,9 @@ pipeline {
         }
      }
      stage('Build Docker Image'){
+       environment { 
+        imgname="sim-1.0"
+       }
        steps {
          sh docker.withServer('tcp://localhost:4342')
          sh echo "Baking jar to docker image ..."
