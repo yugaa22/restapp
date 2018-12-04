@@ -6,7 +6,7 @@ pipeline {
   stages {
      stage('restapp build') {
        steps {
-          sh echo "Building ${BRANCH_NAME} ...."
+          sh 'echo Building ${BRANCH_NAME} ....'
           sh 'sh /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn -e clean install'
         }
      }
@@ -15,14 +15,14 @@ pipeline {
         imgname="sim-1.0"
        }
        steps {
-         sh docker.withServer('tcp://localhost:4342')
-         sh echo "Baking jar to docker image ..."
+         sh 'docker.withServer('tcp://localhost:4342')'
+         sh 'echo Baking jar to docker image ...'
          def Img = docker.build("opsmx11/restapp:$imgname")
-         sh echo "Image id: $Img.id";
-         sh echo "Build no: $BUILD_NUMBER";
+         sh 'echo Image id: $Img.id';
+         sh 'echo Build no: $BUILD_NUMBER";
          sh "echo \"build\": \"1.0\" > restapp.txt";
          archiveArtifacts artifacts: 'restapp.txt'
-         sh echo "Launching container using this image.."
+         sh 'echo Launching container using this image..'
         }
      }
      stage('Push Image') {
