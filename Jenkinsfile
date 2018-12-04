@@ -4,8 +4,7 @@ pipeline {
      pollSCM('*/2 * * * *')
   }
   environment { 
-        imgname="sim-1.0"
-		
+        imgname="sim-1.0"	
     }
   stages {
     stage('restapp build') {
@@ -22,7 +21,7 @@ pipeline {
          sh echo "Image id: $Img.id";
          sh echo "Build no: $BUILD_NUMBER";
          sh "echo \"build\": \"1.0\" > restapp.txt";
-         sh archiveArtifacts artifacts: 'restapp.txt'
+         archiveArtifacts artifacts: 'restapp.txt'
          sh echo "Launching container using this image.."
         }
     }
