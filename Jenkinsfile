@@ -12,17 +12,15 @@ pipeline {
      }
      stage('Build Docker Image'){
        environment { 
-        imgname="sim-1.0"
+        IMAGE="sim-1.0"
        }
        steps {
          sh 'docker.withServer("tcp://localhost:4342")'
          sh 'echo Baking jar to docker image ...'
-	 node {
-            def customImage = docker.build("opsmx11/restapp:$imgname")
-            sh "echo \"build\": \"1.0\" > restapp.txt";
-            archiveArtifacts artifacts: 'restapp.txt'
-            sh 'echo Launching container using this image..'
-	 }
+	     sh """
+          docker build -t  opsmx11/restapp:${IMAGE} .
+          docker push opsmx11/restapp:${IMAGE} .
+        """
         }
      }
      stage('Push Image'){
