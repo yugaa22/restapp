@@ -9,16 +9,16 @@ pipeline {
   stages {
      stage('restapp build'){
        steps{
-	       sh 'echo Building ${BRANCH_NAME} ....'
-	       sh 'sh /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn -e clean install'
-      }
+	      sh 'echo Building ${BRANCH_NAME} ....'
+	      sh 'sh /var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn -e clean install'
+       }
      }
      stage('Build Docker Image'){
        steps {
 	       sh """
                 docker build -t  opsmx11/restapp:${IMAGE} .
 	        echo \"${IMAGE}\" > restapp.txt
-                """
+               """
         }
      }
      stage('Push Image'){
