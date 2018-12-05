@@ -1,5 +1,5 @@
 #!/bin/bash
-##====> for simple restapp
+##=====> for simple restapp
 #(cd /opt;nohup java -Dserver.port=8080 -jar /opt/restapp.jar  > /var/log/rest_service.log 2>&1 &)
 
 ##====> for promethues
