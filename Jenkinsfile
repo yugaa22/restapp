@@ -3,6 +3,9 @@ pipeline {
     triggers {
       pollSCM('*/2 * * * *')
     }
+    environment { 
+        IMAGE="simple-1.0"
+       }
   stages {
      stage('restapp build'){
        steps{
@@ -11,9 +14,6 @@ pipeline {
         }
      }
      stage('Build Docker Image'){
-       environment { 
-        IMAGE="simple-1.0"
-       }
        steps {
 	 sh """
           docker build -t  opsmx11/restapp:${IMAGE} .
@@ -25,7 +25,7 @@ pipeline {
      stage('Push Image'){
        steps {
            sh "sudo docker login --username opsmx11 --password Networks123!"
-           sh "sudo docker push opsmx11/restapp:simp-1.0"
+           sh "sudo docker push opsmx11/restapp:${IMAGE}"
 	 }
      }
   } 
