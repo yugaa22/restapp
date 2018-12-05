@@ -18,7 +18,6 @@ pipeline {
 	       sh """
                 docker build -t  opsmx11/restapp:${IMAGE} .
 	        echo \"${IMAGE}\" > restapp.txt
-                docker push opsmx11/restapp:${IMAGE} 
                 """
         }
      }
