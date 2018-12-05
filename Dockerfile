@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install stress-ng -y
 COPY /target/restapp.jar /opt/restapp.jar
 COPY dockerrun.sh /usr/local/bin/dockerrun.sh
 RUN chmod +x /usr/local/bin/dockerrun.sh
+## for newrelic 
 COPY newrelic/* /opt/newrelic/
 #COPY prometheus/jmx_prometheus_javaagent-0.1.0.jar /opt/jmx_prometheus_javaagent-0.1.0.jar
 #COPY prometheus/tomcat.yml /opt/tomcat.yml
