@@ -1,7 +1,7 @@
 pipeline {
   agent any
     triggers {
-      pollSCM('*/2 * * * *')
+       pollSCM('*/2 * * * *')
     }
     environment { 
        IMAGE="simple-1.0"
@@ -15,18 +15,18 @@ pipeline {
      }
      stage('Build Docker Image'){
        steps {
-	        sh """
-          docker build -t  opsmx11/restapp:${IMAGE} .
+	       sh """
+                docker build -t  opsmx11/restapp:${IMAGE} .
 	        echo \"${IMAGE}\" > restapp.txt
-          docker push opsmx11/restapp:${IMAGE} 
-        """
+                docker push opsmx11/restapp:${IMAGE} 
+                """
         }
      }
      stage('Push Image'){
         steps {
-           sh "sudo docker login --username opsmx11 --password Networks123!"
-           sh "sudo docker push opsmx11/restapp:${IMAGE}"
-	      }
+              sh "sudo docker login --username opsmx11 --password Networks123!"
+              sh "sudo docker push opsmx11/restapp:${IMAGE}"
+	 }
      }
   } 
 }
