@@ -4,7 +4,7 @@ pipeline {
       pollSCM('*/2 * * * *')
     }
     environment { 
-        IMAGE="simple-1.0"
+         IMAGE="simple-1.0"
        }
   stages {
      stage('restapp build'){
