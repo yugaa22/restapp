@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: opsmx-restapp
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: opsmx-restapp
