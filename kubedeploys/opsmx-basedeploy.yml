@@ -37,7 +37,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-base-opsmx
+  name: service-opsmx
 spec:
   type: NodePort
   ports:
