@@ -1,0 +1,61 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: opsmx-basedeploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opsmx-basedeploy
+  template:
+    metadata:
+      labels:
+        app: opsmx-basedeploy
+    spec:
+       containers:
+        - image: 'docker.io/opsmx11/restapp:multi-dev-v0.9.1'
+          imagePullPolicy: Always
+          name: opsmxapp
+          ports:
+            - containerPort: 8090
+              name: cas
+              protocol: TCP
+            - containerPort: 9090
+              name: moniter
+              protocol: TCP
+            - containerPort: 8050
+              name: audit
+              protocol: TCP
+            - containerPort: 8161
+              name: reports
+              protocol: TCP
+       hostAliases:
+        - ip: 10.244.0.1
+          hostnames:
+           - database
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-base-opsmx
+spec:
+  type: NodePort
+  ports:
+    - port: 8090
+      targetPort: 8090
+      protocol: TCP
+      name: canary
+    - port: 9090
+      targetPort: 9090
+      protocol: TCP
+      name: moniter
+    - port: 8050
+      targetPort: 8050
+      protocol: TCP
+      name: audit
+    - port: 8161
+      targetPort: 8161
+      protocol: TCP
+      name: reports
+  selector:
+    app: opsmx-basedeploy
