@@ -13,7 +13,7 @@ spec:
         app: opsmxdeploy
     spec:
        containers:
-        - image: 'docker.io/opsmx11/restapp:baseopsmx-v0.1.1'
+        - image: 'docker.io/opsmx11/restapp:opsmx-cas-v0.1.0'
           imagePullPolicy: Always
           name: opsmxapp
           ports:
