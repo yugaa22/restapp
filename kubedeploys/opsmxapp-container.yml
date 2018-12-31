@@ -30,33 +30,3 @@ spec:
               name: reports
               protocol: TCP
        
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: service-opsmx
-spec:
-  type: LoadBalancer
-  ports:
-    - port: 8090
-      nodePort: 30926
-      targetPort: 8090
-      protocol: TCP
-      name: canary
-    - port: 9090
-      nodePort: 32518
-      targetPort: 9090
-      protocol: TCP
-      name: moniter
-    - port: 8050
-      nodePort: 32300
-      targetPort: 8050
-      protocol: TCP
-      name: audit
-    - port: 8161
-      nodePort: 30396
-      targetPort: 8161
-      protocol: TCP
-      name: reports
-  selector:
-    app: opsmxdeploy
