@@ -53,7 +53,7 @@ public class GreetingController {
 	public static int POSTGRES_NUM_OPS_METRIC_COUNT = 0;
 	
 	public static final String JDBC_DRIVER = "org.postgresql.Driver";  
-	public static final String DB_URL = "jdbc:postgresql://54.193.82.193:5432/opsmx";//172.9.239.1xx
+	public static final String DB_URL = "jdbc:postgresql://35.196.17.143:5432/opsmx";//172.9.239.1xx
 //	public static final String DB_URL = "jdbc:postgresql://localhost:5432/opsmx";//172.9.239.1xx 
 	
 	
