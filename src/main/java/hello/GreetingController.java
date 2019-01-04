@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.lang.management.*;
@@ -64,7 +66,8 @@ public class GreetingController {
 
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-          System.out.println("Phani");
+		LOG.debug("BEGIN: greeting");  
+		System.out.println("Phani");
 
 	// ***** memory leakdemonstrating  *****//
 		/*if (MEMORY_LEAK_TEST_STRING == null || MEMORY_LEAK_TEST_STRING.length() == 0) {
@@ -144,11 +147,15 @@ public class GreetingController {
 			br2.close();
 			
 			
-		}catch(Exception e){ e.printStackTrace();};
+		}
+		catch(Exception e){ 
+			e.printStackTrace();
+			LOG.error("Error: " + e);
+		}
 
-		
-		
-		return sb.length()>0 ? sb.toString().replace("##dogimage##", sb2.toString()) : " No page found";
+		String greetResponse = sb.length()>0 ? sb.toString().replace("##dogimage##", sb2.toString()) : " No page found";
+		LOG.debug("END: greeting" + "\n" + greetResponse);
+		return greetResponse;
             // 	return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
 
@@ -179,11 +186,15 @@ public class GreetingController {
 	
 	@RequestMapping("/dogcount")
 	public String dogCount() {
-	      return "{ \"dogCount\": 20 }";
+		LOG.debug("BEGIN: dogCount");
+		String response = "{ \"dogCount\": 20 }";
+		LOG.debug("END: dogCount" + "\n" + response);
+	      return response;
 	}
 	
 	@RequestMapping("/catcount")
 	public String catCount() {
+		LOG.debug("BEGIN: catCount");
 		String result="{ \"catCount\": 0 }";
 		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
 		/*try{
@@ -215,16 +226,21 @@ public class GreetingController {
 		}
 		/* till here */
 		
+		LOG.debug("END: catCount" + "\n" + result);
 	      return result;
 	}
 	
 	@RequestMapping("/status")
 	public String getStatus() {
-	      return " @@@@@@ Welcome to  Strategy World  @@@@@@";
+		LOG.debug("BEGIN: getStatus");
+		String response = " @@@@@@ Welcome to  Strategy World  @@@@@@";
+		LOG.debug("END: getStatus" + "\n" + response);
+	      return response;
 	}
 
 	@RequestMapping(value = "/mbeans")
 	public void mbeans() throws Exception {
+		LOG.debug("BEGIN: mbeans");
 		System.out.println("New changes in mbeans");
 		MBeanServer server = ManagementFactory.getPlatformMBeanServer();
 //		Set mbeans = server.queryNames(null, null);
@@ -262,7 +278,30 @@ public class GreetingController {
 			System.out.println(processingTime + " : " + requstCount + " : "
 					+ bytesReceived + " : " + bytesSend);
 		}
+		LOG.debug("END: mbeans");
 	}
+	
+	//@RequestMapping("/configuration")
+	@RequestMapping(value="/configuration", produces = "text/plain")
+	public String configuration() throws IOException {
+		LOG.debug("BEGIN: configuration");
+		StringBuffer content = new StringBuffer();
+		try {
+			InputStream is = GreetingController.class.getResourceAsStream("/application.properties");
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			String s;
+			while((s = br.readLine()) != null) {
+				content.append(s + "\n");
+			}
+		}
+		catch (IOException ioe){
+			LOG.error("IOError: file could not be read", ioe);
+		}
+		LOG.info("Content:\n" + content.toString());
+		LOG.debug("END: configuration");
+		return content.toString();
+	}
+	
 	
 	
 	private void writeIntoKairosDB(PrintWriter out, String metricName,
