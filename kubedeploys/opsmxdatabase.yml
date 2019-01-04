@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: opsmx-database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opsmx-db
+  template:
+    metadata:
+      labels:
+        app: opsmx-db
+    spec:
+       containers:
+        - image: 'docker.io/opsmx11/restapp:postgre-9.5'
+          imagePullPolicy: Always
+          name: opsmxdatabase
+          ports:
+            - containerPort: 5432
+              name: postgres
+              protocol: TCP
+---           
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-opsmx
+spec:
+  type: ClusterIP
+  ports:
+   - name: postgres
+     nodePort: 35432
+     port: 5432
+     protocol: TCP
+     targetPort: 5432
+  selector:
+    app: opsmx-db
+ 

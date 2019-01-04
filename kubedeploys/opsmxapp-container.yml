@@ -13,7 +13,7 @@ spec:
         app: opsmxdeploy
     spec:
        containers:
-        - image: 'docker.io/opsmx11/restapp:baseopsmx-v0.1.0'
+        - image: 'docker.io/opsmx11/restapp:opsmx-cas-v0.1.0'
           imagePullPolicy: Always
           name: opsmxapp
           ports:
@@ -29,10 +29,7 @@ spec:
             - containerPort: 8161
               name: reports
               protocol: TCP
-       hostAliases:
-        - ip: 10.244.0.1
-          hostnames:
-           - database
+       
 ---
 apiVersion: v1
 kind: Service
@@ -42,18 +39,22 @@ spec:
   type: NodePort
   ports:
     - port: 8090
+      nodePort: 30926
       targetPort: 8090
       protocol: TCP
       name: canary
     - port: 9090
+      nodePort: 32518
       targetPort: 9090
       protocol: TCP
       name: moniter
     - port: 8050
+      nodePort: 32300
       targetPort: 8050
       protocol: TCP
       name: audit
     - port: 8161
+      nodePort: 30396
       targetPort: 8161
       protocol: TCP
       name: reports

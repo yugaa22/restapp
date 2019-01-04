@@ -29,10 +29,7 @@ spec:
             - containerPort: 8161
               name: reports
               protocol: TCP
-       hostAliases:
-        - ip: 10.244.0.1
-          hostnames:
-           - database
+
 ---
 apiVersion: v1
 kind: Service
