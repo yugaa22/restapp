@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.io.BufferedReader;
@@ -55,7 +56,7 @@ public class GreetingController {
 	public static int POSTGRES_NUM_OPS_METRIC_COUNT = 0;
 	
 	public static final String JDBC_DRIVER = "org.postgresql.Driver";  
-	public static final String DB_URL = "jdbc:postgresql://54.193.82.193:5432/opsmx";//172.9.239.1xx
+	public static final String DB_URL = "jdbc:postgresql://35.196.17.143:5432/opsmx";//172.9.239.1xx
 //	public static final String DB_URL = "jdbc:postgresql://localhost:5432/opsmx";//172.9.239.1xx 
 	
 	
@@ -63,6 +64,9 @@ public class GreetingController {
 	public static final String PASS = "networks123";
 	public static String testData = "latency";
 	// System.out.println("Phani");
+	
+	@Autowired
+	private Simulation sim; 
 
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
@@ -284,6 +288,9 @@ public class GreetingController {
 	//@RequestMapping("/configuration")
 	@RequestMapping(value="/configuration", produces = "text/plain")
 	public String configuration() throws IOException {
+		sim.counterIncrement();
+		LOG.debug("counter " + sim.counterGetValue());
+		LOG.debug("USER: " + sim.USER + "PASS: " + sim.PASS);
 		LOG.debug("BEGIN: configuration");
 		StringBuffer content = new StringBuffer();
 		try {
@@ -298,10 +305,15 @@ public class GreetingController {
 			LOG.error("IOError: file could not be read", ioe);
 		}
 		LOG.info("Content:\n" + content.toString());
+			
+		//Simulations 
+		sim.simulate();
+			
 		LOG.debug("END: configuration");
 		return content.toString();
 	}
-	
+		
+
 	
 	
 	private void writeIntoKairosDB(PrintWriter out, String metricName,

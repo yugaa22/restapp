@@ -47,8 +47,8 @@ public class Simulation {
 	@Value( "${simulation.simulateAdditonalProcessing:FALSE}" )
 	private boolean simulateAdditonalProcessing;
 	
-	@Value( "${simulation.simulateRandomly:0}" )
-	private int simulateRandomly;
+	@Value( "${simulation.simulateErrorRandomly:0}" )
+	private int simulateErrorRandomly;
 	
 	@Value( "${simulation.fileOpen:null}")
 	private String fileOpen;
@@ -128,10 +128,10 @@ public class Simulation {
 		return counter.get();
 	}
 	
-	public void simulateRandomly() {
-		if(simulateRandomly > 0) {
-			LOG.debug("simulateRandomly");
-			if((counterGetValue() % simulateRandomly) == 0) {
+	public void simulateErrorRandomly() {
+		if(simulateErrorRandomly > 0) {
+			LOG.debug("simulateErrorRandomly");
+			if((counterGetValue() % simulateErrorRandomly) == 0) {
 				simulateError();
 			}
 		}
@@ -192,13 +192,13 @@ public class Simulation {
 	}
 	
 	public void simulate() {
-//		simulateRequestLatency();
-//		simulateExcpetion();
-//		simulateLogLines();
-//		//simulateError();
-//		simulateAdditonalProcessing();
-//		simulateRandomly();
-//		simulateFileAcitvity();
+		simulateRequestLatency();
+		simulateExcpetion();
+		simulateLogLines();
+		//simulateError();
+		simulateAdditonalProcessing();
+		simulateErrorRandomly();
+		simulateFileAcitvity();
 		simulateDbRun();
 	}
 	
