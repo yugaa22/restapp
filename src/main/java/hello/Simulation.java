@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.FileHandler;
 
@@ -32,8 +33,11 @@ public class Simulation {
 	@Value( "${simulation.db.pass:null}" )
 	public String PASS;
 	
-	@Value( "${simulation.requestLatency:0}" )
-	private Long requestLatency;
+	@Value( "${simulation.requestLatency.min:0}" )
+	private int requestLatencyMin;
+	
+	@Value( "${simulation.requestLatency.max:0}" )
+	private int requestLatencyMax;
 	
 	@Value( "${simulation.simulateException:FALSE}" )
 	private boolean simulateException;
@@ -55,17 +59,11 @@ public class Simulation {
 	
 	@Value( "${simulation.numberDbCalls:0}" )
 	private int numberDbCalls;
-
-	public Long getRequestLatency() {
-		return requestLatency;
-	}
-
-	public void setRequestLatency(Long requestLatency) {
-		this.requestLatency = requestLatency;
-	}
 	
 	public void simulateRequestLatency() {
-		if(requestLatency > 0) {
+		if((requestLatencyMin > 0) && (requestLatencyMax > 0)) {
+			Random rand = new Random();
+			int requestLatency = rand.nextInt((requestLatencyMax-requestLatencyMin)+1)+requestLatencyMin;
 			LOG.debug("simulateRequestLatency " + requestLatency);
 			try {
 				Thread.sleep(requestLatency);
@@ -192,6 +190,7 @@ public class Simulation {
 	}
 	
 	public void simulate() {
+		counterIncrement();
 		simulateRequestLatency();
 		simulateExcpetion();
 		simulateLogLines();

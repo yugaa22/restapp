@@ -70,6 +70,7 @@ public class GreetingController {
 
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+		long startTime = System.nanoTime();
 		LOG.debug("BEGIN: greeting");  
 
 	// ***** memory leakdemonstrating  ***** //
@@ -157,7 +158,15 @@ public class GreetingController {
 		}
 
 		String greetResponse = sb.length()>0 ? sb.toString().replace("##dogimage##", sb2.toString()) : " No page found";
+		
+		sim.simulate();
+		
 		LOG.debug("END: greeting" + "\n" + greetResponse);
+		
+		long endTime = System.nanoTime();
+		long timeDif = ((endTime - startTime)/1000000);
+		LOG.debug("Elapsed Time: " + timeDif + " milliseconds");
+		
 		return greetResponse;
             // 	return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
@@ -189,14 +198,26 @@ public class GreetingController {
 	
 	@RequestMapping("/dogcount")
 	public String dogCount() {
+		long startTime = System.nanoTime();
+
 		LOG.debug("BEGIN: dogCount");
 		String response = "{ \"dogCount\": 20 }";
+		
+		sim.simulate();
+		
 		LOG.debug("END: dogCount" + "\n" + response);
+		
+		long endTime = System.nanoTime();
+		long timeDif = ((endTime - startTime)/1000000);
+		LOG.debug("Elapsed Time: " + timeDif + " milliseconds");
+		
 	      return response;
 	}
 	
 	@RequestMapping("/catcount")
 	public String catCount() {
+		long startTime = System.nanoTime();
+
 		LOG.debug("BEGIN: catCount");
 		String result="{ \"catCount\": 0 }";
 		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
@@ -229,7 +250,14 @@ public class GreetingController {
 		}
 		/* till here */
 		
+		sim.simulate();
+		
 		LOG.debug("END: catCount" + "\n" + result);
+		
+		long endTime = System.nanoTime();
+		long timeDif = ((endTime - startTime)/1000000);
+		LOG.debug("Elapsed Time: " + timeDif + " milliseconds");
+		
 	      return result;
 	}
 	
@@ -287,7 +315,6 @@ public class GreetingController {
 	//@RequestMapping("/configuration")
 	@RequestMapping(value="/configuration", produces = "text/plain")
 	public String configuration() throws IOException {
-		sim.counterIncrement();
 		LOG.debug("counter " + sim.counterGetValue());
 		LOG.debug("USER: " + sim.USER + "PASS: " + sim.PASS);
 		LOG.debug("BEGIN: configuration");
