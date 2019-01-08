@@ -201,7 +201,7 @@ public class GreetingController {
 		long startTime = System.nanoTime();
 
 		LOG.debug("BEGIN: dogCount");
-		String response = "{ \"dogCount\": 20 }";
+		String response = "{ \"dogCount is \": 22 }";
 		
 		sim.simulate();
 		
@@ -219,7 +219,7 @@ public class GreetingController {
 		long startTime = System.nanoTime();
 
 		LOG.debug("BEGIN: catCount");
-		String result="{ \"catCount\": 0 }";
+		String result="{ \"catCount\": 1 }";
 		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
 		/*try{
 			for (int i=0; i<=1000; i++)
