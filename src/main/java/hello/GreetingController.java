@@ -37,7 +37,7 @@ import java.util.*;
 
 @CrossOrigin
 @RestController
-public class GreetingController throws InterruptedException{
+public class GreetingController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(GreetingController.class);
 	private static final String KAIROSDB_IP_ADDRESS = "52.8.104.253";
@@ -56,8 +56,6 @@ public class GreetingController throws InterruptedException{
 	
 	public static final String JDBC_DRIVER = "org.postgresql.Driver";  
 	public static final String DB_URL = "jdbc:postgresql://35.196.17.143:5432/opsmx";//172.9.239.1xx
-//	public static final String DB_URL = "jdbc:postgresql://localhost:5432/opsmx";//172.9.239.1xx 
-	
 	
 	public static final String USER = "postgres";
 	public static final String PASS = "networks123";
@@ -99,9 +97,9 @@ public class GreetingController throws InterruptedException{
 	    try{
 		th.sleep(15);
 		th.start();
-             }catch(RuntimeException e) {
+            }catch(RuntimeException e) {
 		LOG.error("Error: ", ex);
-	  }	
+	     }	
            // **** End of architectural regression code ***//
 	       	
 		/*if (Long.compare(TIMESTAMP, 0l) == 0
@@ -311,8 +309,7 @@ public class GreetingController throws InterruptedException{
 	
 	
 	
-	private void writeIntoKairosDB(PrintWriter out, String metricName,
-			String value) {
+	private void writeIntoKairosDB(PrintWriter out, String metricName,String value) {
 
 		if (metricName != null) {
 			LOG.debug("The metric name and the key is : {}, {}", metricName,
