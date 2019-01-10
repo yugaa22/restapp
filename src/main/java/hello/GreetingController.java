@@ -92,13 +92,16 @@ public class GreetingController {
 	   //Demonstrating Architectural Regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
            //Architectural Regression implementation has been shifted to ArchRegress.java, here only calling thread class.
 	   		
-	//ArchRegress test = new ArchRegress();
-		//Thread th = new Thread(test);
+         try(){
+	   //ArchRegress test = new ArchRegress();
+	       //Thread th = new Thread(test);
 		Thread th = new Thread();
 		th.sleep(15);
 		th.start();
 
-		
+             }catch (IOException ex) {
+		LOG.error("Error: ", ex);
+	  }	
            // **** End of architectural regression code ***//
 	       	
 		/*if (Long.compare(TIMESTAMP, 0l) == 0
