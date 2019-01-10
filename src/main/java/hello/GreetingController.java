@@ -97,7 +97,7 @@ public class GreetingController {
 	    try{
 		th.sleep(15);
 		th.start();
-            }catch(RuntimeException e) {
+            }catch(RuntimeException ex) {
 		LOG.error("Error: ", ex);
 	     }	
            // **** End of architectural regression code ***//
