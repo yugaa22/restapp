@@ -93,11 +93,12 @@ public class GreetingController {
          
 	   //ArchRegress test = new ArchRegress();
 	       //Thread th = new Thread(test);
-		Thread th = new Thread();
+		
 	    try{
+		Thread th = new Thread();
 		th.sleep(15);
-		th.start();
-            }catch(RuntimeException ex) {
+		//th.start();
+            }catch(Exception ex) {
 		LOG.error("Error: ", ex);
 	     }	
            // **** End of architectural regression code ***//
