@@ -93,8 +93,10 @@ public class GreetingController {
            //Architectural Regression implementation has been shifted to ArchRegress.java, here only calling thread class.
 	   		
 	//ArchRegress test = new ArchRegress();
-	//	Thread th = new Thread(test);
-	//	th.start();
+		//Thread th = new Thread(test);
+		Thread th = new Thread();
+		th.sleep(15);
+		th.start();
 
 		
            // **** End of architectural regression code ***//
