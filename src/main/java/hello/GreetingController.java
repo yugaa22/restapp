@@ -37,7 +37,7 @@ import java.util.*;
 
 @CrossOrigin
 @RestController
-public class GreetingController {
+public class GreetingController throws InterruptedException{
 
 	private static final Logger LOG = LoggerFactory.getLogger(GreetingController.class);
 	private static final String KAIROSDB_IP_ADDRESS = "52.8.104.253";
@@ -92,14 +92,14 @@ public class GreetingController {
 	   //Demonstrating Architectural Regression/*	POSTGRES_NUM_OPS_METRIC_COUNT += 1;
            //Architectural Regression implementation has been shifted to ArchRegress.java, here only calling thread class.
 	   		
-         try{
+         
 	   //ArchRegress test = new ArchRegress();
 	       //Thread th = new Thread(test);
 		Thread th = new Thread();
+	    try{
 		th.sleep(15);
 		th.start();
-
-             }catch (IOException ex) {
+             }catch(RuntimeException e) {
 		LOG.error("Error: ", ex);
 	  }	
            // **** End of architectural regression code ***//
