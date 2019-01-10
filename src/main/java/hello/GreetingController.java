@@ -193,7 +193,7 @@ public class GreetingController {
 	@RequestMapping("/dogcount")
 	public String dogCount() {
 		LOG.debug("BEGIN: dogCount");
-		String response = "{ \"dogCount\": 20 }";
+		String response = "{ \"dogCount\": 33 }";
 		LOG.debug("END: dogCount" + "\n" + response);
 	      return response;
 	}
@@ -201,7 +201,7 @@ public class GreetingController {
 	@RequestMapping("/catcount")
 	public String catCount() {
 		LOG.debug("BEGIN: catCount");
-		String result="{ \"catCount\": 0 }";
+		String result="{ \"catCount\": 11 }";
 		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
 		/*try{
 			for (int i=0; i<=1000; i++)
