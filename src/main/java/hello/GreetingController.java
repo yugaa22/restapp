@@ -96,8 +96,8 @@ public class GreetingController {
 		
 	    try{
 		Thread th = new Thread();
-		th.sleep(30);
-		LOG.info("Latency : ");
+		th.sleep(40);
+		LOG.info("Greeting-Latency ");
 		//th.start();
             }catch(Exception ex) {
 		LOG.error("Error: ", ex);
@@ -194,7 +194,14 @@ public class GreetingController {
 	@RequestMapping("/dogcount")
 	public String dogCount() {
 		LOG.debug("BEGIN: dogCount");
-		String response = "{ \"dogCount\": 33 }";
+		try{
+		  Thread dh = new Thread();
+		  dh.sleep(40);
+		  LOG.info("dogcount-Latency ");
+                  }catch(Exception ex) {
+		LOG.error("Error: ", ex);
+	     }	
+		String response = "{ \"dogCount\": 02 }";
 		LOG.debug("END: dogCount" + "\n" + response);
 	      return response;
 	}
@@ -202,7 +209,13 @@ public class GreetingController {
 	@RequestMapping("/catcount")
 	public String catCount() {
 		LOG.debug("BEGIN: catCount");
-		String result="{ \"catCount\": 11 }";
+		String result="{ \"catCount\": 01 }";
+		try{
+		  Thread ch = new Thread();
+		  ch.sleep(35);
+		  LOG.info("catcount-Latency ");
+                  }catch(Exception ex) {
+		  LOG.error("Error: ", ex);
 		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
 		/*try{
 			for (int i=0; i<=1000; i++)
