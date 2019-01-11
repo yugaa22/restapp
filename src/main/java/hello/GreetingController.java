@@ -210,12 +210,15 @@ public class GreetingController {
 	public String catCount() {
 		LOG.debug("BEGIN: catCount");
 		String result="{ \"catCount\": 01 }";
+		
 		try{
 		  Thread ch = new Thread();
 		  ch.sleep(35);
 		  LOG.info("catcount-Latency ");
                   }catch(Exception ex) {
 		  LOG.error("Error: ", ex);
+		}
+		
 		/*Code for Architectural Regression, prerequisite is to have restapp running on k8 pod */
 		/*try{
 			for (int i=0; i<=1000; i++)
