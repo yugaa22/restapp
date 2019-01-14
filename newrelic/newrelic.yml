@@ -28,8 +28,8 @@ common: &default_settings
   # For example, to report data to "My Application" and "My Application 2" use this:
   # app_name: My Application;My Application 2
   # This setting is required. Up to 3 different application names can be specified.
-  # The first application name must be unique.
-  app_name: opsmxrestapp
+  # The first application name must be unique.for istio only phani
+  app_name: istio-opsmx
 
   # To enable high security, set this property to true. When in high
   # security mode, the agent will use SSL and obfuscated SQL. Additionally,
