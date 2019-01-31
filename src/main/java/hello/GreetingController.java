@@ -209,7 +209,7 @@ public class GreetingController {
 	@RequestMapping("/catcount")
 	public String catCount() {
 		LOG.debug("BEGIN: catCount");
-		String result="{ \"catCount\": 44 }";
+		String result="{ \"catCount is\": 44 }";
 		
 		try{
 		  Thread ch = new Thread();
