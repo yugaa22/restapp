@@ -60,7 +60,7 @@ public class GreetingController {
 	public static final String USER = "postgres";
 	public static final String PASS = "networks123";
 	public static String testData = "latency";
-	// System.out.println("Phani");
+	// System.out.println("Phani test");
 
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
