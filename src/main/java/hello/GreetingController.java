@@ -60,7 +60,7 @@ public class GreetingController {
 	public static final String USER = "postgres";
 	public static final String PASS = "networks123";
 	public static String testData = "latency";
-	// System.out.println("Phani test");
+	// System.out.println("Phani");
 
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
@@ -201,7 +201,7 @@ public class GreetingController {
                   }catch(Exception ex) {
 		LOG.error("Error: ", ex);
 	     }	
-		String response = "{ \"dogCount\": 22 }";
+		String response = "{ \"dogCount\": 24 }";
 		LOG.debug("END: dogCount" + "\n" + response);
 	      return response;
 	}
@@ -209,7 +209,7 @@ public class GreetingController {
 	@RequestMapping("/catcount")
 	public String catCount() {
 		LOG.debug("BEGIN: catCount");
-		String result="{ \"catCount\": 44 }";
+		String result="{ \"catCount\": 34 }";
 		
 		try{
 		  Thread ch = new Thread();
