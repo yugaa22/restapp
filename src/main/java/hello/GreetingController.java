@@ -96,7 +96,7 @@ public class GreetingController {
 		
 	    try{
 		Thread th = new Thread();
-		th.sleep(40);
+		//th.sleep(40);
 		LOG.info("Greeting-Latency ");
 		//th.start();
             }catch(Exception ex) {
@@ -196,12 +196,12 @@ public class GreetingController {
 		LOG.debug("BEGIN: dogCount");
 		try{
 		  Thread dh = new Thread();
-		  dh.sleep(40);
+		  //dh.sleep(40);
 		  LOG.info("dogcount-Latency ");
                   }catch(Exception ex) {
 		LOG.error("Error: ", ex);
 	     }	
-		String response = "{ \"dogCount\": 02 }";
+		String response = "{ \"dogCount\": 22 }";
 		LOG.debug("END: dogCount" + "\n" + response);
 	      return response;
 	}
@@ -209,11 +209,11 @@ public class GreetingController {
 	@RequestMapping("/catcount")
 	public String catCount() {
 		LOG.debug("BEGIN: catCount");
-		String result="{ \"catCount\": 01 }";
+		String result="{ \"catCount\": 44 }";
 		
 		try{
 		  Thread ch = new Thread();
-		  ch.sleep(35);
+		  //ch.sleep(35);
 		  LOG.info("catcount-Latency ");
                   }catch(Exception ex) {
 		  LOG.error("Error: ", ex);
