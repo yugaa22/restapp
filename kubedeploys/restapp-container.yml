@@ -23,3 +23,22 @@ spec:
             - containerPort: 9090
               name: prometheus
               protocol: TCP 
+---           
+apiVersion: v1
+kind: Service
+metadata:
+  name: opsmx-rest-service
+spec:
+  type: LoadBalncer
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: canary
+    - port: 9090
+      targetPort: 9090
+      protocol: TCP
+      name: reports
+  selector:
+    app: opsmx-restapp
+
