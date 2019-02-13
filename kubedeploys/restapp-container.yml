@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: opsmx-restapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: opsmx-restapp
@@ -29,7 +29,7 @@ kind: Service
 metadata:
   name: opsmx-rest-service
 spec:
-  type: NodePort
+  type: LoadBalncer
   ports:
     - port: 8080
       targetPort: 8080
