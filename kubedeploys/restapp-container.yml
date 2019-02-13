@@ -29,7 +29,7 @@ kind: Service
 metadata:
   name: opsmx-rest-service
 spec:
-  type: LoadBalncer
+  type: LoadBalancer
   ports:
     - port: 8080
       targetPort: 8080
