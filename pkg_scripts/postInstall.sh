@@ -10,7 +10,7 @@ sudo wget -qO /opt/newrelic/newrelic.yml  https://raw.githubusercontent.com/OpsM
 sudo wget -qO /opt/newrelic/newrelic.jar https://github.com/OpsMx/restapp/blob/master/newrelic/newrelic.jar?raw=true
 sudo wget -qO /opt/newrelic/newrelic-api.jar  https://github.com/OpsMx/restapp/blob/master/newrelic/newrelic-api.jar?raw=true
 sudo chmod 777 /opt/newrelic/*.jar 
-sudo nohup java -Dserver.port=8080 -javaagent:/opt/newrelic/newrelic.jar -jar /opt/restapp/restapp-0.1.0.jar >/dev/null 2>&1
+nohup java -Dserver.port=8080 -javaagent:/opt/newrelic/newrelic.jar -jar /opt/restapp/restapp-0.1.0.jar >/dev/null 2>&1
 ## PROMETHEUS AGENT TEST
 #sudo /etc/init.d/restapp stop
 #sudo wget -qO /opt/jmx_prometheus_javaagent-0.1.0.jar https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.1.0/jmx_prometheus_javaagent-0.1.0.jar
