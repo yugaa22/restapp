@@ -5,12 +5,12 @@ ln -s /opt/restapp/restapp-0.1.0.jar /etc/init.d/restapp
 update-rc.d restapp defaults
 ###====> for Newrelic monitor
 sudo /etc/init.d/restapp stop
-sudo mkdir -p /opt/newrelic/ /opt/nohup.out
+sudo mkdir -p /opt/newrelic/ 
+sudo touch /opt/nohup.out
 sudo wget -qO /opt/newrelic/newrelic.yml  https://raw.githubusercontent.com/OpsMx/restapp/master/newrelic/newrelic.yml
 sudo wget -qO /opt/newrelic/newrelic.jar https://github.com/OpsMx/restapp/blob/master/newrelic/newrelic.jar?raw=true
 sudo wget -qO /opt/newrelic/newrelic-api.jar  https://github.com/OpsMx/restapp/blob/master/newrelic/newrelic-api.jar?raw=true
 sudo chmod 777 /opt/newrelic/*.jar 
-sudo chmod 455 /opt/nohup.out
 (cd /opt;nohup java -Dserver.port=8080  -javaagent:/opt/newrelic/newrelic.jar -jar /opt/restapp/restapp-0.1.0.jar &)
 ## PROMETHEUS AGENT TEST
 #sudo /etc/init.d/restapp stop
