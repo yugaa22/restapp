@@ -1,0 +1,604 @@
+2018-07-20 18:54:59,343 INFO  START:1532130898 [util.TieredConfigurationLoader] [main] Skipping optional classpath properties file (not found): config/common-config.properties
+2018-07-20 18:54:59,387 INFO  START:1532130898 [util.TieredConfigurationLoader] [main] Skipping optional classpath properties file (not found): config/local-common-config.properties
+2018-07-20 18:54:59,387 INFO  START:1532130898 [util.TieredConfigurationLoader] [main] Skipping optional classpath properties file (not found): config/local-dc1-common-config.properties
+2018-07-20 18:54:59,388 INFO  START:1532130898 [util.TieredConfigurationLoader] [main] Loading optional classpath properties file: config/PipelineUiWebappDaemon-common-config.properties
+2018-07-20 18:54:59,410 INFO  START:1532130898 [util.TieredConfigurationLoader] [main] Loading optional classpath properties file: config/PipelineUiWebappDaemon-local-config.properties
+2018-07-20 18:54:59,411 INFO  START:1532130898 [util.TieredConfigurationLoader] [main] Skipping optional classpath properties file (not found): config/PipelineUiWebappDaemon-local-dc1-config.properties
+2018-07-20 18:54:59,412 INFO  START:1532130898 [util.TieredConfigurationLoader] [main] Skipping optional on-disk properties file (not found): /var/local/pipeline-ui-webapp/conf/product_group_auto.properties
+2018-07-20 18:54:59,413 INFO  START:1532130898 [util.TieredConfigurationLoader] [main] Skipping optional on-disk properties file (not found): /var/local/pipeline-ui-webapp/conf/product_group_app_PipelineUiWebappDaemon.properties
+2018-07-20 18:54:59,419 DEBUG START:1532130898 [daemonizer.DaemonizerConfig] [main] [-DEFAULT-] numErrorsBeforeFailure=3
+2018-07-20 18:54:59,419 DEBUG START:1532130898 [daemonizer.DaemonizerConfig] [main] [-DEFAULT-] millisBetweenStarts=1000
+2018-07-20 18:54:59,419 DEBUG START:1532130898 [daemonizer.DaemonizerConfig] [main] [-DEFAULT-] millisSleepOnError=30000
+2018-07-20 18:54:59,420 DEBUG START:1532130898 [daemonizer.DaemonizerConfig] [main] [exampleWorker] = [threadCount=1, millisBetweenStarts=1000, millisSleepOnError=30000, millisSleepOnTryLater=1000, cronSchedule=, numErrorsBeforeFailure=3]
+2018-07-20 18:54:59,460 INFO  START:1532130898 [util.log] [main] Logging initialized @510ms
+2018-07-20 18:54:59,478 INFO  START:1532130898 [support.AnnotationConfigWebApplicationContext] [main] Refreshing Root WebApplicationContext: startup date [Fri Jul 20 18:54:59 CDT 2018]; root of context hierarchy
+2018-07-20 18:54:59,528 INFO  START:1532130898 [support.AnnotationConfigWebApplicationContext] [main] Registering annotated classes: [class com.indeed.pipeline.ui.webapp.config.AppConfig]
+2018-07-20 18:54:59,780 INFO  START:1532130898 [annotation.AutowiredAnnotationBeanPostProcessor] [main] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-07-20 18:55:00,191 INFO  START:1532130898 [metrics.StatsDManager] [main] Creating a statsd client for localhost:8125 and tags [instance:PipelineUiWebappDaemon,project:pipeline-ui-webapp,app:PipelineUiWebappDaemon]
+2018-07-20 18:55:00,298 DEBUG START:1532130898 [config.BaseHealthcheckConfig] [main] Skipping the creation of a logrepo syslog appender dependency because no such appenders are set, which is fine locally
+2018-07-20 18:55:00,298 WARN  START:1532130898 [config.BaseHealthcheckConfig] [main] The system property indeed.oome.file was not set; skipping addition of OomeDependency
+2018-07-20 18:55:00,320 INFO  START:1532130898 [status.BackgroundDependencyManager] [main] Creating pinger with ping period 30000
+2018-07-20 18:55:00,323 INFO  START:1532130898 [status.BackgroundDependencyManager] [main] Creating pinger with ping period 30000
+2018-07-20 18:55:00,349 INFO  START:1532130898 [config.BaseHealthcheckConfig] [main] Log entry repo for healthcheck initialized.
+2018-07-20 18:55:00,496 INFO  START:1532130898 [daemonizer.DaemonizerUtil] [main] Skipped RAD config for privileged_ips since staging level is DEVELOPER_PROVISIONING
+2018-07-20 18:55:00,496 INFO  START:1532130898 [daemonizer.DaemonizerUtil] [main] Daemonizer didn't get RAD artifact for privileged_ips (radArtifact == null). This doesn't mean privileged_ips will not be loaded. Daemonizer will try to load privileged_ips from legacy artifact system.
+2018-07-20 18:55:00,506 INFO  START:1532130898 [daemonizer.DaemonizerUtil] [main] Initializing privileged_ips: NOT using RAD to get data; Found /var/lucene/privileged_ips.latest; will set up automatic reloading from disk.
+2018-07-20 18:55:00,510 INFO  START:1532130898 [daemonizer.DaemonizerUtil] [main] Configuring auto-reload/auto-healthcheck for privileged_ips artifact as a LegacyDataArtifact
+2018-07-20 18:55:00,565 INFO  START:1532130898 [daemonizer.DaemonizerPrivilegedIPReloader] [main] Successfully reloaded 529 prefixes from /var/lucene/privileged_ips.20170913224006/prod-prefixes.txt
+2018-07-20 18:55:00,582 INFO  START:1532130898 [status.BackgroundDependencyManager] [main] Creating pinger with ping period 30000
+2018-07-20 18:55:00,697 INFO  START:1532130898 [daemonizer.DaemonizerUtil] [main] Starting HTTP monitor server on 0.0.0.0/0.0.0.0:8080
+2018-07-20 18:55:00,698 INFO  START:1532130898 [server.Server] [main] jetty-9.3.14.v20161028
+2018-07-20 18:55:00,722 INFO  START:1532130898 [annotations.AnnotationConfiguration] [main] Scanning elapsed time=0ms
+2018-07-20 18:55:00,723 INFO  START:1532130898 [/] [main] No Spring WebApplicationInitializer types detected on classpath
+2018-07-20 18:55:00,737 INFO  START:1532130898 [daemonizer.DaemonizerIsPrivilegedIPFilter] [main] Getting effective IP from headers: [X-Forwarded-For]
+2018-07-20 18:55:00,884 INFO  START:1532130898 [/] [main] Initializing Spring FrameworkServlet 'spring'
+2018-07-20 18:55:00,885 INFO  START:1532130898 [servlet.DispatcherServlet] [main] FrameworkServlet 'spring': initialization started
+2018-07-20 18:55:00,888 INFO  START:1532130898 [support.AnnotationConfigWebApplicationContext] [main] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 20 18:55:00 CDT 2018]; parent: Root WebApplicationContext
+2018-07-20 18:55:00,889 INFO  START:1532130898 [support.AnnotationConfigWebApplicationContext] [main] Registering annotated classes: [class com.indeed.daemonizer.SpringPrivilegedAccessInterceptorInstaller,class com.indeed.pipeline.ui.webapp.config.MvcWebConfig]
+2018-07-20 18:55:01,239 INFO  START:1532130898 [annotation.AutowiredAnnotationBeanPostProcessor] [main] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-07-20 18:55:01,317 WARN  START:1532130898 [annotation.AutowiredAnnotationBeanPostProcessor] [main] Inconsistent constructor declaration on bean with name 'poodlepantsApiController': single autowire-marked constructor flagged as optional - this constructor is effectively required since there is no default constructor to fall back to: public com.indeed.poodlepants.controllers.PoodlepantsApiController(java.lang.Integer)
+2018-07-20 18:55:01,323 DEBUG START:1532130898 [status.DefaultVersionSupplier] [main] Opening resource at file:/var/local/pipeline-ui-webapp/lib/pipeline-ui-webapp.jar!/com/indeed/logging/indeedlogging.properties
+2018-07-20 18:55:01,526 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/example]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.indeed.pipeline.ui.webapp.controllers.ExternalServiceExampleController.get(java.lang.String) throws java.lang.Exception
+2018-07-20 18:55:01,528 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.indeed.pipeline.ui.webapp.controllers.IndexController.index(javax.servlet.http.HttpServletRequest)
+2018-07-20 18:55:01,531 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/stageview/{cjeMaster}/{jobFolder}/{jobName}/{buildNumber}],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.indeed.pipeline.ui.webapp.controllers.StageViewController.stageView(java.lang.String,java.lang.String,java.lang.String,int)
+2018-07-20 18:55:01,535 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/private/soa/allowlist],methods=[GET]}" onto public java.util.Set<java.lang.String> com.indeed.soa.endpoints.SoaEndpoints.getAllowlistForClient(javax.servlet.http.HttpServletRequest)
+2018-07-20 18:55:01,541 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/private/poodlepants/api/sidebar],produces=[application/json;charset=utf-8]}" onto java.lang.String com.indeed.poodlepants.controllers.PoodlepantsApiController.sidebar() throws java.io.IOException
+2018-07-20 18:55:01,542 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/private/poodlepants/api/monitoring],produces=[application/json;charset=utf-8]}" onto java.lang.String com.indeed.poodlepants.controllers.PoodlepantsApiController.monitoring() throws java.io.IOException
+2018-07-20 18:55:01,543 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/private/poodlepants/api/appConfig || /private/poodlepants/api/appconfig],produces=[application/json;charset=utf-8]}" onto java.lang.String com.indeed.poodlepants.controllers.PoodlepantsApiController.appConfig() throws java.io.IOException
+2018-07-20 18:55:01,545 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/private/poodlepants/]}" onto java.lang.String com.indeed.poodlepants.controllers.PoodlepantsForwardController.index()
+2018-07-20 18:55:01,545 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/private]}" onto java.lang.String com.indeed.poodlepants.controllers.PrivateRedirectController.redirect()
+2018-07-20 18:55:01,546 INFO  START:1532130898 [annotation.RequestMappingHandlerMapping] [main] Mapped "{[/]}" onto java.lang.String com.indeed.poodlepants.controllers.RootController.redirect()
+2018-07-20 18:55:01,600 INFO  START:1532130898 [handler.SimpleUrlHandlerMapping] [main] Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-20 18:55:01,734 INFO  START:1532130898 [annotation.RequestMappingHandlerAdapter] [main] Looking for @ControllerAdvice: WebApplicationContext for namespace 'spring-servlet': startup date [Fri Jul 20 18:55:00 CDT 2018]; parent: Root WebApplicationContext
+2018-07-20 18:55:01,780 INFO  START:1532130898 [annotation.ExceptionHandlerExceptionResolver] [main] Detected @ExceptionHandler methods in springMVCExceptionHandler
+2018-07-20 18:55:01,822 INFO  START:1532130898 [handler.SimpleUrlHandlerMapping] [main] Mapped URL path [/private/poodlepants/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-07-20 18:55:01,896 INFO  START:1532130898 [servlet.DispatcherServlet] [main] FrameworkServlet 'spring': initialization completed in 1011 ms
+2018-07-20 18:55:01,896 INFO  START:1532130898 [handler.ContextHandler] [main] Started o.e.j.w.WebAppContext@5017e1{/,null,AVAILABLE}
+2018-07-20 18:55:01,914 INFO  START:1532130898 [server.AbstractConnector] [main] Started ServerConnector@122635ef{HTTP/1.1,[http/1.1, h2c, h2c-17, h2c-16, h2c-15, h2c-14]}{0.0.0.0:8080}
+2018-07-20 18:55:01,915 INFO  START:1532130898 [server.Server] [main] Started @2966ms
+2018-07-20 18:55:01,919 INFO  START:1532130898 [dbutil.RabbitmqOperations] [main] RabbitMQ configuration file '/' does not exist.
+2018-07-20 18:55:01,919 INFO  START:1532130898 [dbutil.DBAppStatusManager] [main] DBAppStatusManager isn't active ; No status updates will be posted!
+2018-07-20 18:55:01,932 DEBUG START:1532130898 [webapp.PipelineUiWebappDaemon] [main] Creating 1 worker threads
+2018-07-20 18:55:01,933 WARN  START:1532130898 [webapp.PipelineUiWebappDaemon] [main] Documentation URL is missing for worker of type: com.indeed.pipeline.ui.webapp.workers.ExampleWorker; Annotate it with: com.indeed.daemonizer.annotation.DocumentationURL
+2018-07-20 18:55:01,935 INFO  START:1532130898 [status.BackgroundDependencyManager] [main] Creating pinger with ping period 30000
+2018-07-20 18:55:01,936 DEBUG START:1532130898 [webapp.PipelineUiWebappDaemon] [main] 36 defined beans; 36 instantiated; 0 ignored
+2018-07-20 18:55:01,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:02,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:03,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:04,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:05,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:06,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:07,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:08,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:09,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:10,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:11,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:12,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:13,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:14,937 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:15,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:16,936 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:17,937 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:18,937 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:19,937 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:20,937 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:21,938 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:22,939 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:23,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:24,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:25,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:26,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:27,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:28,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:29,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:30,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:31,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:32,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:33,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:34,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:35,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:36,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:37,940 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:38,941 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:39,941 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:40,942 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:41,942 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:42,942 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:43,942 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:44,942 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:45,942 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:46,943 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:47,944 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:48,944 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:49,944 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:50,944 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:51,944 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:52,944 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:53,944 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:54,944 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:55,945 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:56,945 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:57,945 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:58,945 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:55:59,945 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:00,945 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:01,945 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:02,946 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:03,947 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:04,946 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:05,946 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:06,947 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:07,948 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:08,949 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:09,950 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:10,951 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:11,952 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:12,952 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:13,953 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:14,953 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:15,954 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:16,955 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:17,955 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:18,955 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:19,956 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:20,957 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:21,958 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:22,959 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:23,958 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:24,958 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:25,959 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:26,958 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:27,958 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:28,958 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:29,958 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:30,958 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:31,958 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:32,959 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:33,959 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:34,959 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:35,959 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:36,959 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:37,959 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:38,959 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:39,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:40,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:41,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:42,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:43,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:44,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:45,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:46,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:47,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:48,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:49,960 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:50,961 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:51,961 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:52,961 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:53,961 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:54,961 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:55,961 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:56,961 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:57,961 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:58,961 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:56:59,962 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:00,962 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:01,962 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:02,963 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:03,963 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:04,963 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:05,963 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:06,963 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:07,963 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:08,964 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:09,964 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:10,964 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:11,964 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:12,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:13,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:14,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:15,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:16,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:17,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:18,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:19,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:20,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:21,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:22,965 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:23,966 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:24,966 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:25,966 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:26,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:27,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:28,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:29,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:30,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:31,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:32,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:33,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:34,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:35,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:36,967 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:37,968 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:38,968 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:39,968 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:40,969 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:41,969 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:42,969 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:43,970 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:44,969 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:45,970 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:46,970 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:47,970 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:48,970 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:49,970 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:50,970 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:51,970 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:52,971 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:53,971 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:54,971 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:55,971 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:56,971 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:57,972 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:58,972 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:57:59,972 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:00,972 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:01,972 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:02,972 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:03,973 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:04,973 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:05,973 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:06,974 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:07,974 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:08,974 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:09,974 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:10,974 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:11,975 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:12,975 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:13,975 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:14,976 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:15,976 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:16,976 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:17,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:18,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:19,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:20,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:21,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:22,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:23,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:24,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:25,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:26,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:27,977 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:28,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:29,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:30,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:31,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:32,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:33,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:34,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:35,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:36,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:37,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:38,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:39,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:40,978 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:41,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:42,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:43,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:44,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:45,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:46,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:47,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:48,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:49,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:50,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:51,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:52,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:53,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:54,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:55,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:56,979 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:57,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:58,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:58:59,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:00,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:01,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:02,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:03,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:04,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:05,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:06,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:07,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:08,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:09,980 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:10,981 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:11,981 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:12,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:13,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:14,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:15,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:16,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:17,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:18,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:19,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:20,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:21,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:22,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:23,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:24,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:25,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:26,987 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:27,988 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:28,988 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:29,988 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:30,988 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:31,989 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:32,989 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:33,990 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:34,990 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:35,990 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:36,991 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:37,991 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:38,991 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:39,991 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:40,991 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:41,991 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:42,991 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:43,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:44,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:45,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:46,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:47,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:48,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:49,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:50,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:51,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:52,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:53,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:54,992 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:55,993 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:56,993 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:57,993 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:58,994 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:59,994 INFO  START:1532130898 [workers.ExampleWorker] [PipelineUiWebappDaemon-exampleWorker-worker-Thread-0] RUNNING example task with variable local-value
+2018-07-20 18:59:59,994 WARN  START:1532130898 [data.MysqlConfig] [main] Error while reading HickoryCP config from consul. Using default value: false
+com.ecwid.consul.transport.TransportException: java.net.ConnectException: Connection refused
+	at com.ecwid.consul.transport.AbstractHttpTransport.executeRequest(AbstractHttpTransport.java:91)
+	at com.ecwid.consul.transport.AbstractHttpTransport.makeGetRequest(AbstractHttpTransport.java:50)
+	at com.ecwid.consul.v1.ConsulRawClient.makeGetRequest(ConsulRawClient.java:81)
+	at com.ecwid.consul.v1.kv.KeyValueConsulClient.getKVValue(KeyValueConsulClient.java:73)
+	at com.ecwid.consul.v1.kv.KeyValueConsulClient.getKVValue(KeyValueConsulClient.java:67)
+	at com.ecwid.consul.v1.kv.KeyValueConsulClient.getKVValue(KeyValueConsulClient.java:57)
+	at com.ecwid.consul.v1.ConsulClient.getKVValue(ConsulClient.java:374)
+	at com.indeed.identity.service.config.data.MysqlConfig.shouldUseHickoryCP(MysqlConfig.java:116)
+	at com.indeed.identity.service.config.data.MysqlConfig.getDataSource(MysqlConfig.java:103)
+	at com.indeed.identity.service.config.data.MysqlConfig.getGlobalUserDbReadOnlyDataSource(MysqlConfig.java:86)
+	at com.indeed.identity.service.config.data.MysqlConfig$$EnhancerBySpringCGLIB$$544ce927.CGLIB$getGlobalUserDbReadOnlyDataSource$0(<generated>)
+	at com.indeed.identity.service.config.data.MysqlConfig$$EnhancerBySpringCGLIB$$544ce927$$FastClassBySpringCGLIB$$43834ca1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.indeed.identity.service.config.data.MysqlConfig$$EnhancerBySpringCGLIB$$544ce927.getGlobalUserDbReadOnlyDataSource(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at com.indeed.daemonizer.SpringDaemon.createApplicationContext(SpringDaemon.java:90)
+	at com.indeed.daemonizer.SpringDaemon.createApplicationContext(SpringDaemon.java:32)
+	at com.indeed.daemonizer.Daemon.coreStart(Daemon.java:287)
+	at com.indeed.daemonizer.Daemon.start(Daemon.java:188)
+	at com.indeed.daemonizer.Daemon.startForStatusCode(Daemon.java:164)
+	at com.indeed.daemonizer.Daemon.start(Daemon.java:120)
+	at com.indeed.identity.service.IdentityServiceDaemon.main(IdentityServiceDaemon.java:34)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:117)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:177)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:304)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:214)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:160)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:136)
+	at com.ecwid.consul.transport.AbstractHttpTransport.executeRequest(AbstractHttpTransport.java:75)
+	... 109 more
+2018-07-20 18:59:59,994,386 INFO  START:1505858651 [jooq.Constants] [dependency-background-checker-Thread-3] 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.6.0
+2018-07-20 18:59:59,994 iad-mexec13 INFO [com.indeed.common.canary.artifacts.CanaryArtifactChooser] [IdentityServiceProctorLoaderTasks-Thread-1] CanaryArtifactChooser will choose between the following generations of artifact proctor_tests_matrix, considering each generation in order: [/var/lucy/_rad/delta/INDEED-prod.scope/public/proctor_tests_matrix/proctor_tests_matrix.20181115122319-g-18899, /var/lucy/_rad/delta/INDEED-prod.scope/public/proctor_tests_matrix/proctor_tests_matrix.20181115121419-g-18898, /var/lucy/_rad/delta/INDEED-prod.scope/public/proctor_tests_matrix/proctor_tests_matrix.20181115115919-g-18897, /var/lucy/_rad/delta/INDEED-prod.scope/public/proctor_tests_matrix/proctor_tests_matrix.20181115115619-g-18896, /var/lucy/_rad/delta/INDEED-prod.scope/public/proctor_tests_matrix/proctor_tests_matrix.20181115111719-g-18895, /var/lucy/_rad/delta/INDEED-prod.scope/public/proctor_tests_matrix/proctor_tests_matrix.20181114235019-g-18876, /var/lucy/_rad/delta/INDEED-prod.scope/public/proctor_tests_matrix/proctor_tests_matrix.20181114223519-g-18873]
+2018-07-20 18:59:59,994 iad-mexec13 INFO [com.indeed.common.canary.AbstractCanaryService] [IdentityServiceProctorLoaderTasks-Thread-1] Lock status: iad-mexec13.IdentityServiceDaemon.'marvin_passport_identity-service_row-iad_iad_c2a930210150afed9d6a1d2a9a222ac3.a5548826-e2f7-11e8-aff1-00163e392eed'.MESOS is the canary on proctor_tests_matrix/proctor_tests_matrix.20181115122319 until Thu Nov 15 12:44:22 CST 2018. Canary result is not blessed.
+2018-07-20 18:59:59,994 iad-mexec13 INFO [com.indeed.common.canary.AbstractCanaryService] [IdentityServiceProctorLoaderTasks-Thread-1] This instance iad-mexec13.IdentityServiceDaemon.'marvin_passport_identity-service_row-iad_iad_c2a930210150afed9d6a1d2a9a222ac3.a5548826-e2f7-11e8-aff1-00163e392eed'.MESOS already holds the lock on item proctor_tests_matrix/proctor_tests_matrix.20181115122319 as canary. Existing lock is Optional[LockData{owner='iad-mexec13.IdentityServiceDaemon.'marvin_passport_identity-service_row-iad_iad_c2a930210150afed9d6a1d2a9a222ac3.a5548826-e2f7-11e8-aff1-00163e392eed'.MESOS', expiry=1542307462500, ok=false, manual=false}]
+2018-07-20 18:59:59,994 iad-mexec13 INFO [com.indeed.common.canary.AbstractCanaryService] [IdentityServiceProctorLoaderTasks-Thread-1] Item proctor_tests_matrix/proctor_tests_matrix.20181115122319 was not blessed and not locked by any other instance. We have acquired a lock on it and will use it, acting as a canary instance.
+2018-07-20 18:59:59,995 iad-mexec13 INFO [com.indeed.common.canary.AbstractCanaryService] [pool-4-thread-1] This instance (iad-mexec13.IdentityServiceDaemon.'marvin_passport_identity-service_row-iad_iad_c2a930210150afed9d6a1d2a9a222ac3.a5548826-e2f7-11e8-aff1-00163e392eed'.MESOS) successfully blessed item proctor_tests_matrix/proctor_tests_matrix.20181115122319.
+2018-07-20 18:59:59,996 aus-mexec70 WARN [com.indeed.identity.service.controllers.exceptions.RepositoryExceptionHandler] [qtp1654300454-5456] Resource Not Found Exception: 
+
+com.indeed.identity.service.data.models.exceptions.AccountNotFoundException com.indeed.identity.service.data.models.exceptions.AccountNotFoundException: Unable to find account with id, 356329787
+	at com.indeed.identity.service.data.impl.AccountRepositoryGlobalUserDbImpl.getById(AccountRepositoryGlobalUserDbImpl.java:167)
+	at com.indeed.identity.service.data.impl.AccountRepositoryGlobalUserDbImpl.getById(AccountRepositoryGlobalUserDbImpl.java:157)
+	at sun.reflect.GeneratedMethodAccessor157.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy63.getById(Unknown Source)
+	at com.indeed.identity.service.data.impl.AccountMetadataRepositoryGlobalUserDbImpl.getMetadataForAccountId(AccountMetadataRepositoryGlobalUserDbImpl.java:64)
+	at sun.reflect.GeneratedMethodAccessor210.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy64.getMetadataForAccountId(Unknown Source)
+	at com.indeed.identity.service.controllers.AccountMetadataController.getMetadata(AccountMetadataController.java:40)
+	at sun.reflect.GeneratedMethodAccessor209.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:845)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1712)
+	at com.indeed.slo.web.InstrumentationFilter.doFilterInternal(InstrumentationFilter.java:59)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at com.indeed.slo.web.CompositePatternFilter.doFilter(CompositePatternFilter.java:58)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)
+	at com.indeed.identity.service.filters.TrackingFilter.doFilterInternal(TrackingFilter.java:47)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)
+	at com.indeed.daemonizer.DaemonizerIsPrivilegedIPFilter.doFilter(DaemonizerIsPrivilegedIPFilter.java:53)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)
+	at com.indeed.daemonizer.DaemonizerUtil$MesosLoadBalancerSanityCheckFilter.doFilter(DaemonizerUtil.java:726)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:582)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:512)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:462)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:534)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12265] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12203] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12062] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12033] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-11935] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-11668] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12266] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12211] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12266] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12205] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12033] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-11935] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12267] Could not found account for using Replica
+2018-07-20 19:00:00,996 ord-mexec25 WARN [com.indeed.identity.service.authentication.AccountProvider] [qtp2016442966-12210] Could not found account for using Replica
+

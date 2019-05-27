@@ -206,6 +206,26 @@ public class GreetingController {
 	      return response;
 	}
 	
+	@RequestMapping("/readfile")
+	public String readFile(@RequestParam("id") String id, @RequestParam("version") String version, @RequestParam("filename") String fileName) {
+		try {
+			String file = "/logs/"+ id + "/" + version + "/" + fileName;
+			try (InputStream is = this.getClass().getResourceAsStream(file);) {
+				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+				while(reader.ready()) {
+					System.out.println(reader.readLine());
+				}
+			} catch (IOException e) {
+				return e.getMessage();
+			}
+			
+			
+		}catch(Exception ee) {
+			return "fail";
+		}
+		return "success";
+	}
+
 	@RequestMapping("/catcount")
 	public String catCount() {
 		LOG.debug("BEGIN: catCount");

@@ -1,0 +1,53 @@
+2018-07-20 18:44:58,175 INFO  START:1532130297 [util.TieredConfigurationLoader] [main] Skipping optional classpath properties file (not found): config/common-config.properties
+2018-07-20 18:44:58,220 INFO  START:1532130297 [util.TieredConfigurationLoader] [main] Skipping optional classpath properties file (not found): config/local-common-config.properties
+2018-07-20 18:44:58,220 INFO  START:1532130297 [util.TieredConfigurationLoader] [main] Skipping optional classpath properties file (not found): config/local-dc1-common-config.properties
+2018-07-20 18:44:58,221 INFO  START:1532130297 [util.TieredConfigurationLoader] [main] Loading optional classpath properties file: config/PipelineUiWebappDaemon-common-config.properties
+2018-07-20 18:44:58,247 INFO  START:1532130297 [util.TieredConfigurationLoader] [main] Loading optional classpath properties file: config/PipelineUiWebappDaemon-local-config.properties
+2018-07-20 18:44:58,248 INFO  START:1532130297 [util.TieredConfigurationLoader] [main] Skipping optional classpath properties file (not found): config/PipelineUiWebappDaemon-local-dc1-config.properties
+2018-07-20 18:44:58,250 INFO  START:1532130297 [util.TieredConfigurationLoader] [main] Skipping optional on-disk properties file (not found): /var/local/pipeline-ui-webapp/conf/product_group_auto.properties
+2018-07-20 18:44:58,251 INFO  START:1532130297 [util.TieredConfigurationLoader] [main] Skipping optional on-disk properties file (not found): /var/local/pipeline-ui-webapp/conf/product_group_app_PipelineUiWebappDaemon.properties
+2018-07-20 18:44:58,257 DEBUG START:1532130297 [daemonizer.DaemonizerConfig] [main] [-DEFAULT-] numErrorsBeforeFailure=3
+2018-07-20 18:44:58,257 DEBUG START:1532130297 [daemonizer.DaemonizerConfig] [main] [-DEFAULT-] millisBetweenStarts=1000
+2018-07-20 18:44:58,257 DEBUG START:1532130297 [daemonizer.DaemonizerConfig] [main] [-DEFAULT-] millisSleepOnError=30000
+2018-07-20 18:44:58,259 DEBUG START:1532130297 [daemonizer.DaemonizerConfig] [main] [exampleWorker] = [threadCount=1, millisBetweenStarts=1000, millisSleepOnError=30000, millisSleepOnTryLater=1000, cronSchedule=, numErrorsBeforeFailure=3]
+2018-07-20 18:44:58,300 INFO  START:1532130297 [util.log] [main] Logging initialized @489ms
+2018-07-20 18:44:58,321 INFO  START:1532130297 [support.AnnotationConfigWebApplicationContext] [main] Refreshing Root WebApplicationContext: startup date [Fri Jul 20 18:44:58 CDT 2018]; root of context hierarchy
+2018-07-20 18:44:58,376 INFO  START:1532130297 [support.AnnotationConfigWebApplicationContext] [main] Registering annotated classes: [class com.indeed.pipeline.ui.webapp.config.AppConfig]
+2018-07-20 18:44:58,627 INFO  START:1532130297 [annotation.AutowiredAnnotationBeanPostProcessor] [main] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-07-20 18:44:58,685 WARN  START:1532130297 [support.AnnotationConfigWebApplicationContext] [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jenkinsConfig': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'jenkinsBaseUrl' in value "${jenkinsBaseUrl}"
+2018-07-20 18:44:58,686 ERROR START:1532130297 [webapp.PipelineUiWebappDaemon] [main] BeanCreationException: Caught Throwable: Error creating bean with name 'jenkinsConfig': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'jenkinsBaseUrl' in value "${jenkinsBaseUrl}"
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jenkinsConfig': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'jenkinsBaseUrl' in value "${jenkinsBaseUrl}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at com.indeed.daemonizer.SpringDaemon.createApplicationContext(SpringDaemon.java:119)
+	at com.indeed.daemonizer.SpringDaemon.createApplicationContext(SpringDaemon.java:36)
+	at com.indeed.daemonizer.Daemon.coreStart(Daemon.java:294)
+	at com.indeed.daemonizer.Daemon.start(Daemon.java:189)
+	at com.indeed.daemonizer.Daemon.startForStatusCode(Daemon.java:165)
+	at com.indeed.daemonizer.Daemon.start(Daemon.java:121)
+	at com.indeed.pipeline.ui.webapp.PipelineUiWebappDaemon.startDaemonizer(PipelineUiWebappDaemon.java:30)
+	at com.indeed.pipeline.ui.webapp.PipelineUiWebappDaemon.main(PipelineUiWebappDaemon.java:10)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'jenkinsBaseUrl' in value "${jenkinsBaseUrl}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.beans.factory.config.PropertyPlaceholderConfigurer$PlaceholderResolvingStringValueResolver.resolveStringValue(PropertyPlaceholderConfigurer.java:258)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:831)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1086)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	... 18 more
+2018-07-20 18:44:58,689 INFO  START:1532130297 [webapp.PipelineUiWebappDaemon] [Main] Shutting down...
+2018-07-20 18:44:58,690 INFO  START:1532130297 [webapp.PipelineUiWebappDaemon] [Main] All Closeables objects are closed
+2018-07-20 18:44:58,690 INFO  START:1532130297 [webapp.PipelineUiWebappDaemon] [Main] All Terminable objects are shutdown
+2018-07-20 18:44:58,690 INFO  START:1532130297 [webapp.PipelineUiWebappDaemon] [Main] Shutting down LogManager
