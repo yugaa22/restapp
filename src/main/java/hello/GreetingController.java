@@ -228,20 +228,28 @@ public class GreetingController {
 	
 	@RequestMapping("/writeLogs")
 	public String writeLogs(@RequestParam("filename") String fileName) {
+		String file = "/opt/" + fileName;
+		BufferedReader br = null;
+		FileReader fr = null;
 		try {
-			String file = "/opt/" + fileName;
-			try (InputStream is = this.getClass().getResourceAsStream(file);) {
-				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-				while(reader.ready()) {
-					System.out.println(reader.readLine());
-				}
-			} catch (IOException e) {
-				return e.getMessage();
+			fr = new FileReader(file);
+			br = new BufferedReader(fr);
+			String sCurrentLine;
+			while ((sCurrentLine = br.readLine()) != null) {
+				System.out.println(sCurrentLine);
 			}
-			
-			
-		}catch(Exception ee) {
+		}  catch (Exception ee) {
+			ee.printStackTrace();
 			return "fail";
+		} finally {
+			try {
+				if (br != null)
+					br.close();
+				if (fr != null)
+					fr.close();
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
 		}
 		return "success";
 	}
