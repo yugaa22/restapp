@@ -225,6 +225,26 @@ public class GreetingController {
 		}
 		return "success";
 	}
+	
+	@RequestMapping("/writeLogs")
+	public String writeLogs(@RequestParam("filename") String fileName) {
+		try {
+			String file = "/opt/" + fileName;
+			try (InputStream is = this.getClass().getResourceAsStream(file);) {
+				BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+				while(reader.ready()) {
+					System.out.println(reader.readLine());
+				}
+			} catch (IOException e) {
+				return e.getMessage();
+			}
+			
+			
+		}catch(Exception ee) {
+			return "fail";
+		}
+		return "success";
+	}
 
 	@RequestMapping("/catcount")
 	public String catCount() {
