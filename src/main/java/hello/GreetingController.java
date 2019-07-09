@@ -257,7 +257,7 @@ public class GreetingController {
 	@RequestMapping("/catcount")
 	public String catCount() {
 		LOG.debug("BEGIN: catCount");
-		String result="{ \"catCount\": 0.3 }";
+		String result="{ \"catCount\": 0.1 }";
 		
 		try{
 		  Thread ch = new Thread();
@@ -382,12 +382,9 @@ public class GreetingController {
 					value);
 			System.out.println("The metric name and the key is : " + metricName
 					+ ", " + value);
-
 			if (value == null) {
-				LOG.warn(
-						"Skipping write to Kairos as the response has no data for '{}' url",
-						metricName);
-				return;
+			   LOG.warn("Skipping write to Kairos as the response has no data for '{}' url",metricName);
+			   return;
 			}
 
 			StringBuilder putCommand = new StringBuilder();
