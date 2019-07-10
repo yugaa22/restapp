@@ -92,7 +92,7 @@ public class GreetingController {
 	  // test code
          
 	   //ArchRegress test = new ArchRegress();
-	       //Thread th = new Thread(test);
+	      // //Thread th = new Thread(test);
 		
 	    try{
 		Thread th = new Thread();
