@@ -8,14 +8,12 @@ spec:
   selector:
     matchLabels:
       app: bluegreen
-      version: blue
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
         app: bluegreen
-        version: blue
     spec:
       containers:
         - image: 'docker.io/opsmx11/restapp:simple-blue-1.0'
@@ -44,6 +42,4 @@ spec:
       name: reports
   selector:
     app: bluegreen
-    version: green
-
               
