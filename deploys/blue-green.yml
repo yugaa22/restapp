@@ -4,12 +4,9 @@ metadata:
   name: bluegreen
 spec:
   replicas: 1
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: bluegreen
-  strategy:
-    type: RollingUpdate
   template:
     metadata:
       labels:
