@@ -1,12 +1,15 @@
 apiVersion: extensions/v1beta1
-kind: ReplicaSet
+kind: Deployment 
 metadata:
   name: bluegreen
 spec:
   replicas: 1
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: bluegreen
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
