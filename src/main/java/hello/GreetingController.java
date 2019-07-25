@@ -124,7 +124,7 @@ public class GreetingController {
 			}
 		}*/
 		LOG.info("Hello spark :: Inside greeting API");
-		System.out.println("Hello spark + Inside greeting API");
+		//System.out.println("Hello spark + Inside greeting API");
 		
 		// System.out.println("HashMap size : "+ leakMap.size());
        	       // new Greeting(MetricsRegistryClient.client().incrRequestCount(),String.format(template, name))
@@ -161,7 +161,7 @@ public class GreetingController {
 		}
 
 		String greetResponse = sb.length()>0 ? sb.toString().replace("##dogimage##", sb2.toString()) : " No page found";
-		LOG.debug("END: greeting" + "\n" + greetResponse);
+		//LOG.debug("END: greeting" + "\n" + greetResponse);
 		return greetResponse;
             // 	return "POSTGRES_NUM_OPS_METRIC_COUNT : "+ POSTGRES_NUM_OPS_METRIC_COUNT;
 	}
@@ -197,7 +197,7 @@ public class GreetingController {
 		try{
 		  Thread dh = new Thread();
 		  //dh.sleep(40);
-		  LOG.info("dogcount-Latency ");
+		  //LOG.info("dogcount-Latency ");
                   }catch(Exception ex) {
 		LOG.error("Error: ", ex);
 	     }	
@@ -262,7 +262,7 @@ public class GreetingController {
 		try{
 		  Thread ch = new Thread();
 		  //ch.sleep(35);
-		  LOG.info("catcount-Latency ");
+		 // LOG.info("catcount-Latency ");
                   }catch(Exception ex) {
 		  LOG.error("Error: ", ex);
 		}
