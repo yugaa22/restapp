@@ -1,25 +1,25 @@
 apiVersion: extensions/v1beta1
-kind: Deployment 
+kind: Deployment
 metadata:
-  name: ${ trigger['user'] }
-  namespace: ${ trigger['user'] } 
+  name: '${ trigger[''user''] }'
+  namespace: '${ trigger[''user''] }'
 spec:
   replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: ${ trigger['user'] }
+      app: '${ trigger[''user''] }'
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        app: ${ trigger['user'] }
+        app: '${ trigger[''user''] }'
     spec:
       containers:
         - image: 'docker.io/opsmx11/restapp:simple-1.0'
-          imagePullPolicy: Always 
-          name: restapp 
+          imagePullPolicy: Always
+          name: restapp
           ports:
             - containerPort: 8080
               name: http
