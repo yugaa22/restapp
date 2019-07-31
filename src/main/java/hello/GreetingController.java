@@ -60,12 +60,12 @@ public class GreetingController {
 	public static final String USER = "postgres";
 	public static final String PASS = "networks123";
 	public static String testData = "latency";
-	 System.out.println("Phani deploy");
+	 
 
 	@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 		LOG.debug("BEGIN: greeting");  
-		//System.out.println("Phani git trigger 1");
+		System.out.println("Phani git trigger 1");
 		LOG.error("Encountered java.lang.InterruptedException while reading the images in the method : /greeting");
 		LOG.error("Unable to find properties file : java.io.FileNotFoundException at void hello line number ");
 
