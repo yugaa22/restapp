@@ -201,7 +201,7 @@ public class GreetingController {
                   }catch(Exception ex) {
 		LOG.error("Error: ", ex);
 	     }	
-		String response = "{ \"dogCount\": 0.1 }";
+		String response = "{ \"dogCount\": 0.2 }";
 		LOG.debug("END: dogCount" + "\n" + response);
 	      return response;
 	}
