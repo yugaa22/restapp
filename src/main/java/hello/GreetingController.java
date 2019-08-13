@@ -196,7 +196,7 @@ public class GreetingController {
 		try{
 			Thread dh = new Thread();
 			dh.sleep(30);
-			writeException();
+			writeException1();
 			//LOG.info("dogcount-Latency ");
 		}catch(Exception ex) {
 			LOG.error("Error: ", ex);
@@ -204,6 +204,19 @@ public class GreetingController {
 		String response = "{ \"dogCount\": 0.2 }";
 		LOG.debug("END: dogCount" + "\n" + response);
 		return response;
+	}
+	public String writeException1() {
+		try
+		{ 
+			throw new NullPointerException("Animals count: null"); 
+		} 
+		catch(NullPointerException e) 
+		{ 
+			LOG.error("Encountered java.lang.InterruptedException while reading the images {}" , e.getStackTrace());
+			LOG.error("Unable to find properties file : java.io.FileNotFoundException at void hello line number: {}", e.getStackTrace());
+			//LOG.error("ERROR ",e);
+		} 
+		return  "Generating Exceptions like java.lang.InterruptedException and java.io.FileNotFoundException";
 	}
 	@RequestMapping("/generateException")
 	public String writeException() {
