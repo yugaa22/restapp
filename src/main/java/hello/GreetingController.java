@@ -205,8 +205,8 @@ public class GreetingController {
 		LOG.debug("END: dogCount" + "\n" + response);
 		return response;
 	}
-
-	public void writeException() {
+	@RequestMapping("/generateException")
+	public String writeException() {
 		try
 		{ 
 			throw new NullPointerException("Animals count: null"); 
@@ -217,6 +217,7 @@ public class GreetingController {
 			LOG.error("Unable to find properties file : java.io.FileNotFoundException at void hello line number: {}", e.getStackTrace());
 			//LOG.error("ERROR ",e);
 		} 
+		return  "Generating Exceptions like java.lang.InterruptedException and java.io.FileNotFoundException";
 	}
 
 	@RequestMapping("/readfile")
