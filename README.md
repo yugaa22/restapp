@@ -5,7 +5,7 @@ For Debian run cmd restapp jar created  with deb file
 ./gradlew build fatJar packDeb --stacktrace
 
 
-For jar
+For jar 
 ./mvn clean install -e 
 
 in target folder resapp.jar created.by running jar 
