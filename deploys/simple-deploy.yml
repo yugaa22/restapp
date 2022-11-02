@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-deploy2
+  name: simple-deploy-test
 spec:
   replicas: 1
   revisionHistoryLimit: 1
