@@ -6,7 +6,7 @@ For Debian run cmd restapp jar created  with deb file
  
 
 For jar  
-./mvn clean install -e 
+./mvn clean install -e  
 
 in target folder resapp.jar created.by running jar 
 java  -jar restapp.jar
