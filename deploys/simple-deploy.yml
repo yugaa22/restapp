@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-deploy-test
+  name: simple
 spec:
-  replicas: 0
+  replicas: 
   revisionHistoryLimit: 1
   selector:
     matchLabels:
