@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: simple-deploy-testing2
 spec:
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
