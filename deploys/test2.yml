@@ -1,38 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple2
-spec:
-  replicas: 0
-  revisionHistoryLimit: 1
-  selector:
-    matchLabels:
-      app: simple-app1
-  strategy:
-    type: RollingUpdate
-  template:
-    metadata:
-      labels:
-        app: simple-app1
-    spec:
-      containers:
-        - image: 'docker.io/opsmx11/restapp:simple-1.0'
-          imagePullPolicy: Always
-          name: restapp
-          ports:
-            - containerPort: 8080
-              name: http
-              protocol: TCP
-            - containerPort: 9090
-              name: prometheus
-              protocol: TCP
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: simple
 spec:
-  replicas:
+  replicas: 0
   revisionHistoryLimit: 1
   selector:
     matchLabels:
