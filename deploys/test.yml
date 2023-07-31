@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: simple-app1
+        app: simple-app1c
     spec:
       containers:
         - image: 'docker.io/opsmx11/restapp:simple-1.0'
