@@ -4,7 +4,7 @@ springboot debian app for spinnaker
 For Debian run cmd restapp jar created  with deb file 
 ./gradlew build fatJar packDeb --stacktrace
  
-
+ 
 For jar  
 ./mvn clean install -e  
 
