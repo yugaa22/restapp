@@ -13,12 +13,12 @@ spec:
   template:
     metadata:
       labels:
-        app: simple-app1c
+        app: simple-app1
     spec:
       containers:
         - image: 'docker.io/opsmx11/restapp:simple-1.0'
           imagePullPolicy: Always
-          name: restapp
+          name: restapptest
           ports:
             - containerPort: 8080
               name: http
