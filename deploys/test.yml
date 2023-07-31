@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simples
+  name: simples-1
 spec:
   replicas: 0
   revisionHistoryLimit: 1
