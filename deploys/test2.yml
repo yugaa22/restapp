@@ -17,7 +17,7 @@ spec:
       containers:
         - image: 'docker.io/opsmx11/restapp:simple-1.0'
           imagePullPolicy: Always
-          name: restapp
+          name: restappr
           ports:
             - containerPort: 8080
               name: http
